@@ -29,7 +29,7 @@ final bool hovMD;
                           color: Color.fromARGB(255, 255, 255, 255),
 
                           width: MediaQuery.of(context).size.width,
-                          height: MediaQuery.of(context).size.height * 0.86,
+                          height: MediaQuery.of(context).size.height * 0.78,
                           child: Column(children: [
                          
                             SizedBox(
@@ -38,7 +38,7 @@ final bool hovMD;
                             // ignore: duplicate_ignore
                             // ignore: sized_box_for_whitespace
                             Container(
-                                width: MediaQuery.of(context).size.width * 0.7,
+                                width: MediaQuery.of(context).size.width * 0.8,
                                 // color : const Color.fromARGB(255, 68, 255, 130),
                                 child:RichText(
                                 textAlign: TextAlign.center,
@@ -47,9 +47,9 @@ final bool hovMD;
                         TextSpan(
                           text: 'Think an',
                           style : TextStyle(
-                          fontSize: 35,
+                          fontSize: 30,
                           letterSpacing: 0,
-                          fontFamily: 'poppins',
+                          fontFamily: 'roboto',
                           fontWeight: FontWeight.bold,
                           decoration: TextDecoration.none,
                           color: Color.fromARGB(201, 0, 0, 0),
@@ -58,20 +58,20 @@ final bool hovMD;
                         TextSpan(
                           text: ' app,',
                           style : TextStyle(
-                          fontSize: 35,
-                          fontFamily: 'poppins',
+                          fontSize: 30,
+                          fontFamily: 'roboto',
                           letterSpacing: 0,
                           fontWeight: FontWeight.bold,
                           decoration: TextDecoration.none,
-                          color: Colors.blue,
+                          color: Color.fromARGB(255, 54, 52, 208)
                         )
                         ),
                         TextSpan(
                           text: ' we ',
                           style : TextStyle(
-                          fontSize: 35,
+                          fontSize: 30,
                           letterSpacing: 0,
-                          fontFamily: 'poppins',
+                          fontFamily: 'roboto',
                           fontWeight: FontWeight.bold,
                           decoration: TextDecoration.none,
                           color: Color.fromARGB(201, 0, 0, 0),
@@ -80,9 +80,9 @@ final bool hovMD;
                         TextSpan(
                           text: 'code',
                           style : TextStyle(
-                          fontSize: 35,
+                          fontSize: 30,
                           letterSpacing: 0,
-                          fontFamily: 'poppins',
+                          fontFamily: 'roboto',
                           fontWeight: FontWeight.bold,
                           decoration: TextDecoration.none,
                           color: Color.fromARGB(201, 0, 0, 0),
@@ -91,10 +91,10 @@ final bool hovMD;
                         TextSpan(
                           text: ' your imagination.',
                           style : TextStyle(
-                          fontSize: 35,
+                          fontSize: 30,
                           letterSpacing: 0,
                           fontWeight: FontWeight.bold,
-                          fontFamily: 'poppins',
+                          fontFamily: 'roboto',
                           decoration: TextDecoration.none,
                           color: Color.fromARGB(201, 0, 0, 0),
                         )
@@ -117,27 +117,14 @@ final bool hovMD;
                                   fontFamily: 'roboto',
                                   fontSize: 16,
                                   // color: Color(0xffFF576D),
-                                  color: Color(0xff052659),
+                                  // color: Color(0xff052659), 
+                                  color:Color.fromARGB(255, 54, 52, 208)
                                 ),
                               ),
                             ),
 
-
-                            // Container(
-                            //     width: MediaQuery.of(context).size.width * 0.7,
-                            //     // color : const Color.fromARGB(255, 215, 68, 255),
-                            //     child: const Text(
-                            //       'Turning your vision into innovative apps, creating custom solutions that drive success in the digital realm.',
-                            //       textAlign: TextAlign.center,
-                            //       style: TextStyle(
-                            //           fontSize: 16,
-                            //           fontFamily: 'roboto',
-                            //           fontWeight: FontWeight.normal,
-                            //           color: Colors.white),
-                            //     )),
-                            
                             const SizedBox(
-                              height: 25,
+                              height: 20,
                             ),
 
                             HoverEffectExample(hovMD),
@@ -147,15 +134,17 @@ final bool hovMD;
                               height: 40
                             ),
                             Container(
-                            width: MediaQuery.of(context).size.width * 0.62,
-                            // height: 10,
+                           
+                            width: MediaQuery.of(context).size.width * 0.65,
                             alignment: Alignment.topCenter,
                             // color:Colors.pink,
                             child: ClipRRect(
                             child: Image.asset(
-                            'assets/images/dev3.png',
-                            fit : BoxFit.contain),),)
+                            'assets/images/ved.jpg',
+                            fit : BoxFit.cover),),),
 
+                           
+                           
                           ]),
                         ),
                       ),

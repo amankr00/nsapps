@@ -69,10 +69,10 @@ class _HoverEffectExampleState extends State<HoverEffectExample> {
                     child: Transform.scale(
                       scale: isDownloadHovered ? 1.03 : 1.0,
                       child: Container(
-                        width: 220,
+                        width: hovMD ? 185 : 220,
                         decoration: BoxDecoration(
                           color: hovMD
-                              ? Color(0xFFff5700)
+                              ? Color(0xff0D0628)
                               : (isDownloadHovered
                                   ? Color.fromARGB(255, 252, 110, 39)
                                   : Color(0xFFff5700)),
@@ -110,7 +110,9 @@ class _HoverEffectExampleState extends State<HoverEffectExample> {
                                 duration: Duration(milliseconds: 300),
                                 margin: EdgeInsets.only(
                                     left: isDownloadHovered ? 10 : 0),
-                                child: Icon(
+                                child: hovMD ? 
+                                Container()
+                               : Icon(
                                   Icons.chevron_right,
                                   color: Color(0xFFFFFFFF),
                                   size: 20,

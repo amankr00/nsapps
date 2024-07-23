@@ -265,7 +265,6 @@ class _MobileLyState extends State<MobileLy> {
       backgroundColor: Color.fromARGB(255, 255, 255, 255),
       body: Column(
         children: [
-          Navbar(),
           Expanded(
             child: NotificationListener<ScrollNotification>(
               onNotification: (scrollNotification) {
@@ -281,6 +280,7 @@ class _MobileLyState extends State<MobileLy> {
                   crossAxisAlignment: CrossAxisAlignment.center,
                   mainAxisAlignment: MainAxisAlignment.center,
                   children: [
+          Navbar(),
                     Mphase1(hovMD),
                     Container(
                       height: 100,

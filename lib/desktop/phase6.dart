@@ -7,7 +7,7 @@ class phase6 extends StatelessWidget {
     return Row(
       mainAxisAlignment: MainAxisAlignment.spaceAround,
       children: [
-      Padding(padding: EdgeInsets.only(left : 100),
+      Padding(padding: EdgeInsets.only(left : 80),
           child : 
         Column(
         crossAxisAlignment: CrossAxisAlignment.start,
