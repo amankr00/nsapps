@@ -50,19 +50,20 @@ class _HoverEffectExampleState extends State<HoverEffectExample> {
                 child: GestureDetector(
                     onTap: () {
                       // _showDownloadDialog(context);
-                      
+
                       showDialog(
                         context: context,
                         useRootNavigator: false,
                         // Navigator.pop(context, true),
                         builder: (BuildContext context) {
                           return Container(
-                          decoration: BoxDecoration(
-                          borderRadius: BorderRadius.circular(20)),
-                              child: hovMD ? 
-                              subscriptionForm2(context, _nameController,
-                                  _numberController)  : subscriptionForm(context, _nameController,
-                                  _numberController) ) ;
+                              decoration: BoxDecoration(
+                                  borderRadius: BorderRadius.circular(20)),
+                              child: hovMD
+                                  ? subscriptionForm2(context, _nameController,
+                                      _numberController)
+                                  : subscriptionForm(context, _nameController,
+                                      _numberController));
                         },
                       );
                     },
@@ -110,13 +111,13 @@ class _HoverEffectExampleState extends State<HoverEffectExample> {
                                 duration: Duration(milliseconds: 300),
                                 margin: EdgeInsets.only(
                                     left: isDownloadHovered ? 10 : 0),
-                                child: hovMD ? 
-                                Container()
-                               : Icon(
-                                  Icons.chevron_right,
-                                  color: Color(0xFFFFFFFF),
-                                  size: 20,
-                                ),
+                                child: hovMD
+                                    ? Container()
+                                    : Icon(
+                                        Icons.chevron_right,
+                                        color: Color(0xFFFFFFFF),
+                                        size: 20,
+                                      ),
                               ),
                             ],
                           ),
@@ -130,10 +131,10 @@ class _HoverEffectExampleState extends State<HoverEffectExample> {
   }
 
   Center subscriptionForm(
-      BuildContext context,
-      TextEditingController nameController,
-      TextEditingController numberController,
-      ) {
+    BuildContext context,
+    TextEditingController nameController,
+    TextEditingController numberController,
+  ) {
     return Center(
       child: Stack(alignment: Alignment.center, children: [
         Container(
@@ -284,162 +285,162 @@ class _HoverEffectExampleState extends State<HoverEffectExample> {
       ]),
     );
   }
+
   Center subscriptionForm2(
-      BuildContext context,
-      TextEditingController nameController,
-      TextEditingController numberController,
-      ) {
+    BuildContext context,
+    TextEditingController nameController,
+    TextEditingController numberController,
+  ) {
     return Center(
-      child: Stack(alignment: Alignment.center, children: [
+      child: Stack(children: [
+        // Container(
+        //     width: MediaQuery.of(context).size.width * 0.70,
+        //     height: MediaQuery.of(context).size.height * 0.60,
+        //     color: Color.fromARGB(255, 255, 255, 255)),
+        // Positioned(
+        //   left: 0,
+        //   bottom: 0,
+        //   // right: 0,
+        //   child: Container(
+        //       height: MediaQuery.of(context).size.height * 0.1,
+        //       color: Colors.green,
+        //       child: ClipRect(
+        //         child: Image.asset(
+        //           'assets/images/ltbt.png',
+        //         ),
+        //       )),
+        // ),
+        // Positioned(
+        //   right: 0,
+        //   top: 0,
+        //   // right: 0,
+        //   child: Container(
+        //       height: MediaQuery.of(context).size.height * 0.5,
+        //       // color: Colors.green,
+        //       child: ClipRect(
+        //         child: Image.asset(
+        //           'assets/images/rtup.png',
+        //         ),
+        //       )),
+        // ),
         Container(
-        
-          child: Stack(children: [
-            Container(
-                width: MediaQuery.of(context).size.width * 0.70,
-                height: MediaQuery.of(context).size.height * 0.70,
-                color: const Color.fromARGB(255, 188, 39, 39)),
-            Positioned(
-              left: 0,
-              bottom: 0,
-              // right: 0,
-              child: Container(
-                  height: MediaQuery.of(context).size.height * 0.4,
-                  // color: Colors.green,
-                  child: ClipRect(
-                    child: Image.asset(
-                      'assets/images/ltbt.png',
+            width: MediaQuery.of(context).size.width * 0.75,
+            height: MediaQuery.of(context).size.height * 0.50,
+            decoration: BoxDecoration(
+            color:Color.fromARGB(255, 219, 219, 219),
+            borderRadius: BorderRadius.circular(40)),
+            child: Column(
+              mainAxisAlignment: MainAxisAlignment.center,
+              crossAxisAlignment: CrossAxisAlignment.center,
+              children: [
+                // SizedBox(
+                //   height: 10,
+                // ),
+                Container(
+                  // color:Colors.pink,
+                  alignment: Alignment.center,
+                  width: MediaQuery.of(context).size.width * 0.67,
+                  child: Text(
+                    'GET YOUR OWN APP TODAY',
+                    textAlign: TextAlign.center,
+                    style: TextStyle(
+                      fontSize: 22,
+                      fontFamily: 'roboto',
+                      letterSpacing: 0,
+                      fontWeight: FontWeight.w100,
+                      decoration: TextDecoration.none,
+                      color: Color(0xff5C6B8B),
                     ),
-                  )),
-            ),
-            Positioned(
-              right: 0,
-              top: 0,
-              // right: 0,
-              child: Container(
-                  height: MediaQuery.of(context).size.height * 0.5,
-                  // color: Colors.green,
-                  child: ClipRect(
-                    child: Image.asset(
-                      'assets/images/rtup.png',
+                  ),
+                ),
+
+                Padding(
+                  padding: EdgeInsetsDirectional.fromSTEB(0, 30, 0, 30),
+                  child: Text(
+                    'Your Vision , Our Code',
+                    style: TextStyle(
+                      fontSize: 16,
+                      fontFamily: 'arimo',
+                      letterSpacing: 0,
+                      fontWeight: FontWeight.w600,
+                      decoration: TextDecoration.none,
+                      color: Color(0xff5C6B8B),
                     ),
-                  )),
-            ),
-            Container(
-                width: MediaQuery.of(context).size.width * 0.70,
-                height: MediaQuery.of(context).size.height * 0.70,
-                child: Column(
-                  mainAxisAlignment: MainAxisAlignment.center,
-                  crossAxisAlignment: CrossAxisAlignment.center,
-                  children: [
-                    SizedBox(
-                      height: 20,
-                    ),
-                    Container(
-                    // color:Colors.pink,
-                    alignment: Alignment.center,
-                width: MediaQuery.of(context).size.width * 0.67,
-                    child :  Text(
-                      'GET YOUR OWN APP TODAY',
-                      textAlign: TextAlign.center,
-                      style: TextStyle(
-                        fontSize: 25,
-                        fontFamily: 'ArchivoBlack-Regular',
-                        letterSpacing: 0,
-                        fontWeight: FontWeight.w100,
-                        decoration: TextDecoration.none,
-                        color: Color(0xff5C6B8B),
-                      ),
-                    ),),
-                   
-                    Padding(
-                      padding: EdgeInsetsDirectional.fromSTEB(0, 30, 0, 30),
-                      child: Text(
-                        'Your Vision , Our Code',
-                        style: TextStyle(
-                          fontSize: 22,
-                          fontFamily: 'arimo',
-                          letterSpacing: 0,
-                          fontWeight: FontWeight.w600,
-                          decoration: TextDecoration.none,
-                          color: Color(0xff5C6B8B),
-                        ),
-                      ),
-                    ),
-                    Container(
-                      height: MediaQuery.of(context).size.height * 0.20,
-                      child: ClipRect(
-                        child: Image.asset('assets/images/lg.png'),
-                      ),
-                    ),
-                    SizedBox(
-                      height: MediaQuery.of(context).size.width * 0.01,
-                    ),
-                    Container(
-                      width: MediaQuery.of(context).size.width * 0.40,
-                      child: Material(
-                        // elevation: 3,
-                        borderRadius: BorderRadius.circular(60),
-                        color: Color(0xffEFF4FA),
-                        child: Padding(
-                          padding: EdgeInsets.symmetric(horizontal: 20),
-                          child: TextField(
-                            controller: _nameController,
-                            textAlign: TextAlign.center,
-                            decoration: InputDecoration(
-                              hintText: 'Name',
-                              hintStyle: TextStyle(
-                                color: Color.fromARGB(255, 163, 162, 162),
-                                fontSize: 18,
-                                fontFamily: 'play',
-                                fontWeight: FontWeight.w500,
-                                letterSpacing: 0,
-                              ),
-                              border: InputBorder.none,
-                            ),
-                          ),
-                        ),
-                      ),
-                    ),
-                    SizedBox(
-                      height: MediaQuery.of(context).size.width * 0.008,
-                    ),
-                    Container(
-                      width: MediaQuery.of(context).size.width * 0.40,
-                      child: Material(
-                        // elevation: 3,
-                        borderRadius: BorderRadius.circular(60),
-                        color: Color(0xffEFF4FA),
-                        child: Padding(
-                          padding: EdgeInsets.symmetric(horizontal: 20),
-                          child: TextField(
-                            controller: _numberController,
-                            textAlign: TextAlign.center,
-                            decoration: InputDecoration(
-                              hintText: '+91 contact no.',
-                              hintStyle: TextStyle(
-                                color: Color.fromARGB(255, 163, 162, 162),
-                                fontSize: 18,
-                                fontFamily: 'play',
-                                fontWeight: FontWeight.w400,
-                                letterSpacing: 0,
-                              ),
-                              border: InputBorder.none,
-                            ),
-                          ),
-                        ),
-                      ),
-                    ),
-                    SizedBox(
-                      height: MediaQuery.of(context).size.width * 0.018,
-                    ),
-                    Padding(
+                  ),
+                ),
+                // Container(
+                //   height: MediaQuery.of(context).size.height * 0.20,
+                //   child: ClipRect(
+                //     child: Image.asset('assets/images/lg.png'),
+                //   ),
+                // ),
+                SizedBox(
+                  height: MediaQuery.of(context).size.width * 0.01,
+                ),
+                Container(
+                  width: MediaQuery.of(context).size.width * 0.40,
+                  child: Material(
+                    // elevation: 3,
+                    borderRadius: BorderRadius.circular(60),
+                    color: Color(0xffEFF4FA),
+                    child: Padding(
                       padding: EdgeInsets.symmetric(horizontal: 20),
-                      child: Subscribe(_nameController, _numberController),
+                      child: TextField(
+                        controller: _nameController,
+                        textAlign: TextAlign.center,
+                        decoration: InputDecoration(
+                          hintText: 'Name',
+                          hintStyle: TextStyle(
+                            color: Color.fromARGB(255, 163, 162, 162),
+                            fontSize: 18,
+                            fontFamily: 'play',
+                            fontWeight: FontWeight.w500,
+                            letterSpacing: 0,
+                          ),
+                          border: InputBorder.none,
+                        ),
+                      ),
                     ),
-                  ],
-                )),
-          ]),
-        ),
+                  ),
+                ),
+                SizedBox(
+                  height: MediaQuery.of(context).size.width * 0.008,
+                ),
+                Container(
+                  width: MediaQuery.of(context).size.width * 0.40,
+                  child: Material(
+                    // elevation: 3,
+                    borderRadius: BorderRadius.circular(60),
+                    color: Color(0xffEFF4FA),
+                    child: Padding(
+                      padding: EdgeInsets.symmetric(horizontal: 20),
+                      child: TextField(
+                        controller: _numberController,
+                        textAlign: TextAlign.center,
+                        decoration: InputDecoration(
+                          hintText: '+91 contact no.',
+                          hintStyle: TextStyle(
+                            color: Color.fromARGB(255, 163, 162, 162),
+                            fontSize: 18,
+                            fontFamily: 'play',
+                            fontWeight: FontWeight.w400,
+                            letterSpacing: 0,
+                          ),
+                          border: InputBorder.none,
+                        ),
+                      ),
+                    ),
+                  ),
+                ),
+                SizedBox(
+                  height: MediaQuery.of(context).size.width * 0.018,
+                ),
+                Padding(
+                  padding: EdgeInsets.symmetric(horizontal: 20),
+                  child: Subscribe(_nameController, _numberController),
+                ),
+              ],
+            )),
       ]),
     );
   }
@@ -507,30 +508,36 @@ class _SubscribeState extends State<Subscribe> {
               //     ),
               //   ),
               // );
-              _showSnackbar();
+              // _showSnackbar();
             },
-            child: AnimatedContainer(
-              duration: Duration(milliseconds: 200),
-              width: _isHovering ? 180 * 1.05 : 180,
-              height: _isHovering ? 50 * 1.05 : 50,
-              decoration: BoxDecoration(
-                color: _isHovering
-                    ? Color.fromARGB(201, 19, 125, 131)
-                    : Color.fromARGB(255, 23, 186, 186),
-                borderRadius: BorderRadius.circular(20),
-              ),
-              child: Container(
-                width: MediaQuery.of(context).size.width * 0.19,
-                // height: MediaQuery.of(context).size.width * 0.05,
-                alignment: Alignment.center,
-                child: Text('SUBSCRIBE',
-                    style: TextStyle(
-                        fontSize: 20,
-                        decoration: TextDecoration.none,
-                        color: Colors.white,
-                        letterSpacing: 2)),
-              ),
+            child: ElevatedButton(onPressed: (){}, child: Text('Subscribe',
             ),
+            clipBehavior: ,)
+            // 
+            // AnimatedContainer(
+            //   duration: Duration(milliseconds: 200),
+            //   width: _isHovering ? 180 * 1.05 : 180,
+            //   height: _isHovering ? 50 * 1.05 : 50,
+            //   decoration: BoxDecoration(
+            //     color: _isHovering
+            //         ? Color.fromARGB(201, 19, 125, 131)
+            //         : Color.fromARGB(255, 23, 186, 186),
+            //     borderRadius: BorderRadius.circular(20),
+            //   ),
+            //   child: Container(
+            //     width: MediaQuery.of(context).size.width * 0.19,
+            //     // height: MediaQuery.of(context).size.width * 0.05,
+            //     alignment: Alignment.center,
+            //     child: Text('SUBSCRIBE',
+            //         style: TextStyle(
+            //             fontSize: 20,
+            //             decoration: TextDecoration.none,
+            //             color: Colors.white,
+            //             letterSpacing: 2)),
+            //   ),
+            // ),
+
+            
           )),
     ]);
   }
