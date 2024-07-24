@@ -512,7 +512,7 @@ class _SubscribeState extends State<Subscribe> {
             },
             child: ElevatedButton(onPressed: (){}, child: Text('Subscribe',
             ),
-            clipBehavior: ,)
+            )
             // 
             // AnimatedContainer(
             //   duration: Duration(milliseconds: 200),
