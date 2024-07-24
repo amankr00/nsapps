@@ -98,8 +98,13 @@ class HomeScreen extends StatelessWidget {
                   width: MediaQuery.of(context).size.width * 0.4,
                   // color : Colors.lightGreen,
                   child : ContainerList()),
+                  Container(
+                  height: MediaQuery.of(context).size.height * 0.9,
+                  width: MediaQuery.of(context).size.width * 0.4,
+                  // color : Colors.lightGreen,
+                  child : ContainerList2()),
 
-                  ContainerList2(),
+                  // ContainerList(),
 
     
       ]),

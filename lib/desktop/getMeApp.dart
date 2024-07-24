@@ -509,8 +509,9 @@ class _SubscribeState extends State<Subscribe> {
               //   ),
               // );
               // _showSnackbar();
+              // Text('gghg');
             },
-            child: ElevatedButton(onPressed: (){}, child: Text('Subscribe',
+            child: ElevatedButton(onPressed: (){_showSnackbar();}, child: Text('Subscribe',
             ),
             )
             // 

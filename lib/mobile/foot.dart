@@ -261,7 +261,7 @@ class Foot extends StatelessWidget {
               ),
             ),
             Padding(
-              padding: EdgeInsetsDirectional.fromSTEB(0, 0, 0, 20),
+              padding: EdgeInsetsDirectional.fromSTEB(0, 0, 0, 10),
               child: Row(
                 mainAxisSize: MainAxisSize.max,
                 mainAxisAlignment: MainAxisAlignment.spaceBetween,
@@ -284,10 +284,7 @@ class Foot extends StatelessWidget {
                           ),
                         ),
                       ),
-                      Row(
-                        mainAxisSize: MainAxisSize.max,
-                        children: [],
-                      ),
+                  
                     ],
                   ),
                 ],

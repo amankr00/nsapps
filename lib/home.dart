@@ -238,7 +238,6 @@ class _MobileLyState extends State<MobileLy> {
   Widget build(
     BuildContext context,
   ) {
-    // bool _isDownloadHovered = false;
 
     final _containerHeight = 300.0;
     final _containerwidth = 400.0;
@@ -247,20 +246,20 @@ class _MobileLyState extends State<MobileLy> {
     String ty = "MOB";
     double pRt = MediaQuery.of(context).size.width;
     double pLt = MediaQuery.of(context).size.width;
-    if (ty == "Mobile") {
-      pRt = pRt * 0.02;
-    } else if (ty == "tablet") {
-      pRt = pRt * 0.08;
-      pLt = pLt * 0.02;
-    } else {
-      if (pRt < 1000) {
-        pRt = pRt * 0.14;
-        pLt = pLt * 0.4;
-      } else {
-        pRt = 150;
-        pLt = 50;
-      }
-    }
+    // if (ty == "Mobile") {
+    //   pRt = pRt * 0.02;
+    // } else if (ty == "tablet") {
+    //   pRt = pRt * 0.08;
+    //   pLt = pLt * 0.02;
+    // } else {
+    //   if (pRt < 1000) {
+    //     pRt = pRt * 0.14;
+    //     pLt = pLt * 0.4;
+    //   } else {
+    //     pRt = 150;
+    //     pLt = 50;
+    //   }
+    // }
     return Scaffold(
       backgroundColor: Color.fromARGB(255, 255, 255, 255),
       body: Column(
