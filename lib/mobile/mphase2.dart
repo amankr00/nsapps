@@ -25,7 +25,7 @@ bool _isKnowMoreHovered = false;
                                     fontWeight: FontWeight.normal,
                                     color: Color(0xff052659)))),
                         SizedBox(
-                          height: 30,
+                          height: 29,
                         ),
                         Container(
                             // color : Colors.red,
