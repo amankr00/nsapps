@@ -82,7 +82,7 @@ class _HorizontalListViewState extends State<HorizontalListView> {
               margin: EdgeInsets.only(right : 80.0),
               child: Container(
                   child:
-                      ClipRect(child: Image.asset('assets/images/iris.png'))));
+                      ClipRect(child: Image.asset('assets/images/diris.png'))));
         } else if (index == 5) {
           return Container(
               width: MediaQuery.of(context).size.width * 0.1,

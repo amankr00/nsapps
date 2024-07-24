@@ -63,6 +63,7 @@ class _ContainerList2State extends State<ContainerList2> {
   @override
   Widget build(BuildContext context) {
     return ListView.builder(
+    physics: NeverScrollableScrollPhysics(),
       reverse: true,
       controller: _scrollController2,
       scrollDirection: Axis.vertical,
@@ -237,6 +238,7 @@ class _ContainerListState extends State<ContainerList> {
   @override
   Widget build(BuildContext context) {
     return ListView.builder(
+    physics: NeverScrollableScrollPhysics(),
       controller: _scrollController,
       scrollDirection: Axis.vertical,
       itemCount: appData.length * 2, // Multiplying to ensure looping effect
