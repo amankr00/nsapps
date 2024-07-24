@@ -11,22 +11,22 @@ class _ContainerList2State extends State<ContainerList2> {
     {
       'image': 'assets/images/csama.png',
       'title': 'Samadhan App',
-      'description': 'Revolutionizing travel planning.'
+      'description': 'Revolutionize your process with simplicity, transparency'
     },
     {
       'image': 'assets/images/csamaksh.png',
       'title': 'Samaksh App',
-      'description': 'Revolutionizing travel planning.'
+      'description': 'Improves teacher punctuality and student attendance'
     },
     {
       'image': 'assets/images/ctaskflow.png',
       'title': 'Taskflow App',
-      'description': 'Revolutionizing travel planning.'
+      'description': 'Designed for the Saran District Administration'
     },
     {
       'image': 'assets/images/caspire.png',
       'title': 'Aspire App',
-      'description': 'Revolutionizing travel planning.'
+      'description': 'Tt ensures transparent and efficient project management'
     },
   ];
 
@@ -43,7 +43,7 @@ class _ContainerList2State extends State<ContainerList2> {
   }
 
   void _startAutoScroll() {
-    _timer2 = Timer.periodic(Duration(milliseconds: 12), (timer) {
+    _timer2 = Timer.periodic(Duration(milliseconds: 6), (timer) {
       // Smooth scrolling by incrementing the scroll position
       _scrollPosition2 += 1.0;
       if (_scrollPosition2 >= _scrollController2.position.maxScrollExtent) {
@@ -63,7 +63,7 @@ class _ContainerList2State extends State<ContainerList2> {
   @override
   Widget build(BuildContext context) {
     return ListView.builder(
-    reverse: true,
+      reverse: true,
       controller: _scrollController2,
       scrollDirection: Axis.vertical,
       itemCount: appData.length * 2, // Multiplying to ensure looping effect
@@ -72,7 +72,7 @@ class _ContainerList2State extends State<ContainerList2> {
         return Column(
           children: [
             Container(
-              height: MediaQuery.of(context).size.height * 0.32,
+              height: MediaQuery.of(context).size.height * 0.37,
               child: AnimatedContainerItem(
                 index: index,
                 currentPage: 0, // Not used in this version
@@ -85,7 +85,6 @@ class _ContainerList2State extends State<ContainerList2> {
     );
   }
 }
-
 
 class AnimatedContainerItem extends StatelessWidget {
   final int index;
@@ -130,9 +129,7 @@ class AnimatedContainerItem extends StatelessWidget {
               child: Padding(
                 padding: EdgeInsets.only(left: 4.0, bottom: 4),
                 child: Image.asset(
-                  width: index == 2
-                      ? MediaQuery.of(context).size.width * 0.15
-                      : MediaQuery.of(context).size.width * 0.35,
+                  width:MediaQuery.of(context).size.width * 0.45,
                   height: 70,
                   data['image']!,
                   alignment: Alignment.center,
@@ -141,10 +138,12 @@ class AnimatedContainerItem extends StatelessWidget {
               ),
             ),
             Container(
+            alignment: Alignment.center,
               width: MediaQuery.of(context).size.width * 0.25,
               margin: EdgeInsets.all(8),
               child: Text(
                 data['title']!,
+                textAlign: TextAlign.center,
                 style: TextStyle(
                   color: Color(0xff062659),
                   fontFamily: 'roboto',
@@ -161,6 +160,7 @@ class AnimatedContainerItem extends StatelessWidget {
                 data['description']!,
                 textAlign: TextAlign.center,
                 style: TextStyle(
+
                   color: Color(0xff062659),
                   fontFamily: 'roboto',
                   fontSize: 16,
@@ -175,7 +175,6 @@ class AnimatedContainerItem extends StatelessWidget {
   }
 }
 
-
 class ContainerList extends StatefulWidget {
   @override
   _ContainerListState createState() => _ContainerListState();
@@ -186,7 +185,7 @@ class _ContainerListState extends State<ContainerList> {
     {
       'image': 'assets/images/cdak.png',
       'title': 'Dak App',
-      'description': 'Revolutionizing travel planning',
+      'description': 'Dak is a dak that daks',
     },
     {
       'image': 'assets/images/chome.png',
@@ -194,14 +193,14 @@ class _ContainerListState extends State<ContainerList> {
       'description': 'Revolutionizing travel planning.',
     },
     {
-      'image': 'assets/images/ciris.png',
+      'image': 'assets/images/iris.png',
       'title': 'Iris App',
       'description': 'Simplifies the creation',
     },
     {
       'image': 'assets/images/cprath.png',
       'title': 'Prathmikta App',
-      'description': 'Revolutionizing travel planning.',
+      'description': 'Prathmikta is a good word',
     },
   ];
 
@@ -218,7 +217,7 @@ class _ContainerListState extends State<ContainerList> {
   }
 
   void _startAutoScroll() {
-    _timer = Timer.periodic(Duration(milliseconds: 12), (timer) {
+    _timer = Timer.periodic(Duration(milliseconds: 6), (timer) {
       // Smooth scrolling by incrementing the scroll position
       _scrollPosition += 1.0;
       if (_scrollPosition >= _scrollController.position.maxScrollExtent) {
@@ -246,7 +245,7 @@ class _ContainerListState extends State<ContainerList> {
         return Column(
           children: [
             Container(
-              height: MediaQuery.of(context).size.height * 0.32,
+              height: MediaQuery.of(context).size.height * 0.37,
               child: AnimatedContainerItem2(
                 index: index,
                 currentPage: 0, // Not used in this version
@@ -301,11 +300,9 @@ class AnimatedContainerItem2 extends StatelessWidget {
                 color: Colors.white,
               ),
               child: Padding(
-                padding: EdgeInsets.only(left: 4.0, bottom: 4),
+                padding: EdgeInsets.only(left: 3.0, bottom: 3),
                 child: Image.asset(
-                  width: index == 2
-                      ? MediaQuery.of(context).size.width * 0.15
-                      : MediaQuery.of(context).size.width * 0.35,
+                  width:MediaQuery.of(context).size.width * 0.35,
                   height: 70,
                   data['image']!,
                   alignment: Alignment.center,
@@ -314,22 +311,24 @@ class AnimatedContainerItem2 extends StatelessWidget {
               ),
             ),
             Container(
-              width: MediaQuery.of(context).size.width * 0.25,
-              margin: EdgeInsets.all(8),
-              child: Text(
-                data['title']!,
-                style: TextStyle(
-                  color: Color(0xff062659),
-                  fontFamily: 'roboto',
-                  fontSize: 16,
-                  fontWeight: FontWeight.bold,
-                ),
-              ),
-            ),
+                width: MediaQuery.of(context).size.width * 0.25,
+                alignment: Alignment.center,
+                margin: EdgeInsets.all(4),
+                child: Text(
+                textAlign: TextAlign.center,
+                  data['title']!,
+                  style: TextStyle(
+                    color: Color(0xff062659),
+                    fontFamily: 'roboto',
+                    fontSize: 16,
+                    fontWeight: FontWeight.bold,
+                  ),
+                )),
+                
             Container(
               width: MediaQuery.of(context).size.width * 0.28,
               alignment: Alignment.center,
-              margin: EdgeInsets.all(8),
+              margin: EdgeInsets.all(4),
               child: Text(
                 data['description']!,
                 textAlign: TextAlign.center,
