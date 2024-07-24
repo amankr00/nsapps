@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:nsapps/desktop/phase8.dart';
 import 'dart:async';
 import 'package:responsive_builder/responsive_builder.dart';
 import 'package:flutter_animate/flutter_animate.dart';
@@ -162,8 +163,18 @@ class _HomeMainState extends State<HomeMain> {
                 padding: EdgeInsetsDirectional.fromSTEB(0, 100, 0, 0),
                 child: phase6(),
               ),
+              SizedBox(
+                height: 100,
+              ),
+             
 
               // phase7(),
+              Phase8(),
+
+              SizedBox(
+                height: 50,
+              ),
+             
 
               Bottom(),
             ],
@@ -238,7 +249,6 @@ class _MobileLyState extends State<MobileLy> {
   Widget build(
     BuildContext context,
   ) {
-
     final _containerHeight = 300.0;
     final _containerwidth = 400.0;
     double _scrollOffset = 0.0;
@@ -279,7 +289,7 @@ class _MobileLyState extends State<MobileLy> {
                   crossAxisAlignment: CrossAxisAlignment.center,
                   mainAxisAlignment: MainAxisAlignment.center,
                   children: [
-          Navbar(),
+                    Navbar(),
                     Mphase1(hovMD),
                     Container(
                       height: 100,
@@ -371,7 +381,7 @@ class _MobileLyState extends State<MobileLy> {
                           Container(
                             width: MediaQuery.of(context).size.width * 0.7,
                             child: Text(
-                              'Conduct stakeholder interviews and surveys to identify client goals, pain points, and requirements for a clear project scope statement.',
+                              'Stay ahead with innovative technology by embracing advancements, adapting strategies, and implementing cutting-edge solutions proactively.',
                               textAlign: TextAlign.center,
                               style: TextStyle(
                                 fontFamily: 'roboto',

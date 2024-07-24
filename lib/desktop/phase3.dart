@@ -26,21 +26,14 @@ class phase3 extends StatelessWidget {
                   //     fontWeight: FontWeight.bold,
                   //   ),
                   // ),
+                  // TextSpan(  
+                  // ),
                   TextSpan(
-                    text: 'Allocating resources and ',
-                    style: TextStyle(
-                      color: Color.fromARGB(255, 0, 0, 0),
-                      fontSize: 45,
-                      fontFamily: 'poppins',
-                      fontWeight: FontWeight.bold,
-                    ),
-                  ),
-                  TextSpan(
-                    text: 'budgeting tasks.',
+                    text: 'Project Scoping.',
                     style: TextStyle(
                       color: const Color.fromARGB(255, 255, 231, 11),
                       fontSize: 45,
-                      fontFamily: 'poppins',
+                      fontFamily: 'roboto',
                       fontWeight: FontWeight.bold,
                     ),
                   ),
@@ -61,12 +54,12 @@ class phase3 extends StatelessWidget {
                                       MediaQuery.of(context).size.width * 0.3,
                                   // height: MediaQuery.of(context).size.heght * 0.3,
                                   child: Text(
-                                      "Allocate resources and budget tasks effectively to optimize project outcomes and ensure timely completion.",
+                                      "Conduct stakeholder interviews and surveys to identify client goals, pain points, and requirements for a clear project scope statement.",
                                       style:TextStyle(
-                                        fontSize: 20,
-                                        fontFamily: 'poppins',
+                                        fontSize: 19,
+                                        fontFamily: 'roboto',
                                         letterSpacing: 0,
-                                        fontWeight: FontWeight.w500,
+                                        fontWeight: FontWeight.normal,
                                         decoration: TextDecoration.none,
                                         color: Color.fromARGB(255, 0, 0, 0),
                                       )))

@@ -31,34 +31,23 @@ class phase5 extends StatelessWidget {
           mainAxisAlignment: MainAxisAlignment.spaceEvenly,
           children: [
             Container(
-                // width : 380,
-                // height: 130,
                 width: MediaQuery.of(context).size.width * 0.33,
                 // color: Colors.green,
                 child: RichText(
                     text: TextSpan(children: [
                   TextSpan(
-                    text: 'One codebase',
+                    text: 'Time Management',
                     style: TextStyle(
                       color: Color(0xff008cf7),
                       fontSize: 45,
-                      fontFamily: 'poppins',
-                      fontWeight: FontWeight.bold,
-                    ),
-                  ),
-                  TextSpan(
-                    text: ', multiple platform deployment.',
-                    style: TextStyle(
-                      color: Color.fromARGB(255, 3, 3, 4),
-                      fontSize: 45,
-                      fontFamily: 'poppins',
+                      fontFamily: 'roboto',
                       fontWeight: FontWeight.bold,
                     ),
                   ),
                   
                 ]))),
             Padding(
-              padding: EdgeInsetsDirectional.only(top: 30),
+              padding: EdgeInsetsDirectional.only(top: 50),
               child: Column(
                       crossAxisAlignment: CrossAxisAlignment.start,
                       children: [
@@ -73,12 +62,12 @@ class phase5 extends StatelessWidget {
                                       MediaQuery.of(context).size.width * 0.3,
                                   // height: MediaQuery.of(context).size.height * 0.3,
                                   child: Text(
-                                      "Develop one codebase to deploy across multiple platforms, ensuring consistent functionality and user experience everywhere.",
+                                      "Allocating resources and budgeting tasks involves effectively distributing available assets and financial planning to achieve project goals efficiently.",
                                       style:TextStyle(
-                                        fontSize: 20,
-                                        fontFamily: 'poppins',
+                                        fontSize: 19,
+                                        fontFamily: 'roboto',
                                         letterSpacing: 0,
-                                        fontWeight: FontWeight.w500,
+                                        fontWeight: FontWeight.normal,
                                         decoration: TextDecoration.none,
                                         color: Color.fromARGB(255, 0, 0, 0),
                                       )))

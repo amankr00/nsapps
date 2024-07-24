@@ -60,7 +60,7 @@ class _Phase1State extends State<Phase1> {
                           style : TextStyle(
                           fontSize: 45,
                           letterSpacing: 0,
-                          fontFamily: 'poppins',
+                          fontFamily: 'roboto',
                           fontWeight: FontWeight.bold,
                           decoration: TextDecoration.none,
                           color: Color.fromARGB(203, 0, 0, 0),
@@ -70,7 +70,7 @@ class _Phase1State extends State<Phase1> {
                           text: ' app,',
                           style : TextStyle(
                           fontSize: 45,
-                          fontFamily: 'poppins',
+                          fontFamily: 'roboto',
                           letterSpacing: 0,
                           fontWeight: FontWeight.bold,
                           decoration: TextDecoration.none,
@@ -82,7 +82,7 @@ class _Phase1State extends State<Phase1> {
                           style : TextStyle(
                           fontSize: 45,
                           letterSpacing: 0,
-                          fontFamily: 'poppins',
+                          fontFamily: 'roboto',
                           fontWeight: FontWeight.bold,
                           decoration: TextDecoration.none,
                           color: Color.fromARGB(203, 0, 0, 0),
@@ -93,7 +93,7 @@ class _Phase1State extends State<Phase1> {
                           style : TextStyle(
                           fontSize: 45,
                           letterSpacing: 0,
-                          fontFamily: 'poppins',
+                          fontFamily: 'roboto',
                           fontWeight: FontWeight.bold,
                           decoration: TextDecoration.none,
                           color: Color.fromARGB(203, 0, 0, 0),
@@ -105,7 +105,7 @@ class _Phase1State extends State<Phase1> {
                           fontSize: 45,
                           letterSpacing: 0,
                           fontWeight: FontWeight.bold,
-                          fontFamily: 'poppins',
+                          fontFamily: 'roboto',
                           decoration: TextDecoration.none,
                           color: Color.fromARGB(203, 0, 0, 0),
                         )
@@ -130,10 +130,10 @@ class _Phase1State extends State<Phase1> {
                     child: Text(
                         'Turning your vision into innovative apps, we create custom solutions that drive success and faster growth in the digital realm.',
                         style : TextStyle(
-                          fontSize: 20,
+                          fontSize: 19,
                           letterSpacing: 0,
-                          fontFamily: ' Inter',
-                          fontWeight: FontWeight.w500,
+                          fontFamily: ' roboto',
+                          fontWeight: FontWeight.normal,
                           decoration: TextDecoration.none,
                           color: const Color.fromARGB(255, 0, 0, 0),
                         ))).animate().fade(delay: 100.ms).slideX(begin: -5, end: 0),
@@ -161,17 +161,7 @@ class _Phase1State extends State<Phase1> {
                 height: MediaQuery.of(context).size.height * 0.7,
                 child : Anime5(),
                 
-
-                // child: ClipRRect(
-                //   child: Image.asset(
-                //     'assets/images/copy.png',
-                //     fit: BoxFit.contain,
-                //   ),
-                // )
                 )
-                // .animate()
-                // .fade(duration: 500.ms)
-                // .slideX(begin: 1, end: 0),
           ),
         )
       ],

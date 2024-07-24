@@ -17,19 +17,19 @@ class phase6 extends StatelessWidget {
               width: MediaQuery.of(context).size.width * 0.3,
               child: RichText(
                   text: TextSpan(children: [
+                // TextSpan(
+                //     text: 'Staying ahead with ',
+                //     style: TextStyle(
+                //       fontSize: 45,
+                //       fontFamily: 'poppins',
+                //       color: Color.fromARGB(255, 0, 0, 0),
+                //       fontWeight: FontWeight.bold,
+                //     )),
                 TextSpan(
-                    text: 'Staying ahead with ',
+                    text: 'Innovative Technology ',
                     style: TextStyle(
                       fontSize: 45,
-                      fontFamily: 'poppins',
-                      color: Color.fromARGB(255, 0, 0, 0),
-                      fontWeight: FontWeight.bold,
-                    )),
-                TextSpan(
-                    text: 'innovative technology ',
-                    style: TextStyle(
-                      fontSize: 45,
-                      fontFamily: 'poppins',
+                      fontFamily: 'roboto',
                       color:Color(0xfffe4d87),
                       fontWeight: FontWeight.bold,
                     )),
@@ -38,7 +38,7 @@ class phase6 extends StatelessWidget {
               
 
                Padding(
-                 padding: const EdgeInsetsDirectional.fromSTEB(0, 30, 0, 0),
+                 padding: const EdgeInsetsDirectional.fromSTEB(0, 50, 0, 0),
                  child: Column(
                         crossAxisAlignment: CrossAxisAlignment.start,
                         children: [
@@ -55,8 +55,8 @@ class phase6 extends StatelessWidget {
                                   child: Text(
                                       "Stay ahead with innovative technology by embracing advancements, adapting strategies, and implementing cutting-edge solutions proactively.",
                                       style:TextStyle(
-                                        fontSize: 20,
-                                        fontFamily: 'poppins',
+                                        fontSize: 19,
+                                        fontFamily: 'roboto',
                                         letterSpacing: 0,
                                         fontWeight: FontWeight.w500,
                                         decoration: TextDecoration.none,
