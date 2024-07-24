@@ -95,7 +95,7 @@ class Bottom extends StatelessWidget {
                           ),
                         ),
                         Padding(
-                          padding: EdgeInsetsDirectional.fromSTEB(0, 80, 0, 0),
+                          padding: EdgeInsetsDirectional.fromSTEB(0, 40, 0, 0),
                           child: Row(
                             mainAxisSize: MainAxisSize.max,
                             children: [
@@ -231,7 +231,7 @@ class Bottom extends StatelessWidget {
             ),
           ),
           Padding(
-            padding: EdgeInsetsDirectional.fromSTEB(0, 80, 0, 0),
+            padding: EdgeInsetsDirectional.fromSTEB(0, 40, 0, 0),
             child: Row(
               mainAxisSize: MainAxisSize.max,
               mainAxisAlignment: MainAxisAlignment.start,

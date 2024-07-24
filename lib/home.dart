@@ -120,7 +120,7 @@ class _HomeMainState extends State<HomeMain> {
               ),
 
               Row(mainAxisAlignment: MainAxisAlignment.center, children: [
-                IconItem('IRIS APP', 'assets/images/iris.png'),
+                IconItem('IRIS APP', 'assets/images/diris.png'),
                 IconItem('TaskFlow App', 'assets/images/taskflow.png'),
                 IconItem('Samadhan App', 'assets/images/samadhan.png'),
                 IconItem('Maa App', 'assets/images/maa.png'),
@@ -159,7 +159,7 @@ class _HomeMainState extends State<HomeMain> {
               ),
 
               Padding(
-                padding: EdgeInsetsDirectional.fromSTEB(0, 100, 0, 100),
+                padding: EdgeInsetsDirectional.fromSTEB(0, 100, 0, 0),
                 child: phase6(),
               ),
 
