@@ -26,10 +26,10 @@ class MyApp extends StatelessWidget {
           fontFamily: GoogleFonts.archivoBlack().fontFamily),
       initialRoute: '/',
       routes: {
-       '/': (context) => HomeMain(title: 'Ns',),
-        // '/': (context) => NewPage(),
+      //  '/': (context) => HomeMain(title: 'Ns',),
+        // '/': (context) => NewPage('tony' , 'Steve' , '90'),
         // '/': (context) => CustomPaint(),
-        // '/': (context) => MyLot(),
+        '/': (context) => MyLot(),
         // '/' : (context) => TapToScroll(),
          //'/' : (context) => Phase1(10,10,true),
         
@@ -38,3 +38,4 @@ class MyApp extends StatelessWidget {
   }
 }
  
+

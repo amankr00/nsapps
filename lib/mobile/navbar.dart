@@ -5,9 +5,6 @@ _NavbarState createState() => _NavbarState();
 }
 
 class _NavbarState extends State<Navbar>{
-static const IconData apps_sharp = IconData(0xe78e, fontFamily: 'MaterialIcons');
-
-@override
 Widget build(BuildContext context) {
 return Column(
 children : [
@@ -44,10 +41,7 @@ Container(
                   decoration: TextDecoration.none,
                   color: Color.fromARGB(255, 255, 255, 255)),
             )),
-            
-            // Padding(padding: EdgeInsets.only(right: 10),
-            // child : Icon(apps_sharp,size:40,color:Colors.white))
-          ],
+            ],
         ))]);
 }
 }

@@ -3,7 +3,6 @@ import 'package:nsapps/desktop/phase8.dart';
 import 'dart:async';
 import 'package:responsive_builder/responsive_builder.dart';
 import 'package:flutter_animate/flutter_animate.dart';
-
 import 'desktop/footer.dart';
 import 'desktop/navbar.dart';
 import 'desktop/phase1.dart';
@@ -92,7 +91,7 @@ class _HomeMainState extends State<HomeMain> {
             crossAxisAlignment: CrossAxisAlignment.center,
             children: [
               // Navbar
-              navbar(),
+              Navbar1(),
 
               Phase1(pRt, pLt, hov),
 
@@ -298,7 +297,7 @@ class _MobileLyState extends State<MobileLy> {
                     ),
                     Mphase2(),
                     Mphase3(),
-                    SizedBox(height: 20),
+                    const SizedBox(height: 20),
                     Container(
                       width: MediaQuery.of(context).size.width * 0.9,
                       decoration: BoxDecoration(
@@ -391,7 +390,7 @@ class _MobileLyState extends State<MobileLy> {
                               ),
                             ),
                           ),
-                          SizedBox(height: 40),
+                          const SizedBox(height: 40),
                         ],
                       ),
                     ),

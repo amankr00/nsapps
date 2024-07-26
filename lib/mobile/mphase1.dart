@@ -8,148 +8,118 @@ class Mphase1 extends StatefulWidget {
   final bool hovMD;
   Mphase1(this.hovMD);
 
-  
   @override
   // ignore: library_private_types_in_public_api
   _Mphase1State createState() => _Mphase1State(hovMD);
 }
 
 class _Mphase1State extends State<Mphase1> {
-final bool hovMD;
+  final bool hovMD;
   _Mphase1State(this.hovMD);
   @override
   Widget build(BuildContext context) {
-
-    return  Stack(
-                    children: [
-                      Positioned(
-                        child: Container(
-                          // color : Color.fromARGB(255, 136, 118, 153),
-                          // color : Color(0xff5A258A),
-                          color: Color.fromARGB(255, 255, 255, 255),
-
-                          width: MediaQuery.of(context).size.width,
-                          height: MediaQuery.of(context).size.height * 0.78,
-                          child: Column(children: [
-                         
-                            SizedBox(
-                              height: 30,
-                            ),
-                            // ignore: duplicate_ignore
-                            // ignore: sized_box_for_whitespace
-                            Container(
-                                width: MediaQuery.of(context).size.width * 0.8,
-                                // color : const Color.fromARGB(255, 68, 255, 130),
-                                child:RichText(
-                                textAlign: TextAlign.center,
-                    text: TextSpan (
-                      children: [
-                        TextSpan(
-                          text: 'Think an',
-                          style : TextStyle(
-                          fontSize: 30,
-                          letterSpacing: 0,
-                          fontFamily: 'roboto',
-                          fontWeight: FontWeight.bold,
-                          decoration: TextDecoration.none,
-                          color: Color.fromARGB(201, 0, 0, 0),
-                        )
-                        ),
-                        TextSpan(
-                          text: ' app,',
-                          style : TextStyle(
+    return Container(
+      width: MediaQuery.of(context).size.width,
+      height: MediaQuery.of(context).size.height * 0.78,
+      color: Color.fromARGB(255, 255, 255, 255),
+      child: Column(children: [
+        const SizedBox(
+          height: 30,
+        ),
+        Container(
+            width: MediaQuery.of(context).size.width * 0.8,
+            child: RichText(
+              textAlign: TextAlign.center,
+              text: TextSpan(
+                children: [
+                  TextSpan(
+                      text: 'Think an',
+                      style: TextStyle(
+                        fontSize: 30,
+                        letterSpacing: 0,
+                        fontFamily: 'roboto',
+                        fontWeight: FontWeight.bold,
+                        decoration: TextDecoration.none,
+                        color: Color.fromARGB(201, 0, 0, 0),
+                      )),
+                  TextSpan(
+                      text: ' app,',
+                      style: TextStyle(
                           fontSize: 30,
                           fontFamily: 'roboto',
                           letterSpacing: 0,
                           fontWeight: FontWeight.bold,
                           decoration: TextDecoration.none,
-                          color: Color.fromARGB(255, 54, 52, 208)
-                        )
-                        ),
-                        TextSpan(
-                          text: ' we ',
-                          style : TextStyle(
-                          fontSize: 30,
-                          letterSpacing: 0,
-                          fontFamily: 'roboto',
-                          fontWeight: FontWeight.bold,
-                          decoration: TextDecoration.none,
-                          color: Color.fromARGB(201, 0, 0, 0),
-                        )
-                        ),
-                        TextSpan(
-                          text: 'code',
-                          style : TextStyle(
-                          fontSize: 30,
-                          letterSpacing: 0,
-                          fontFamily: 'roboto',
-                          fontWeight: FontWeight.bold,
-                          decoration: TextDecoration.none,
-                          color: Color.fromARGB(201, 0, 0, 0),
-                        )
-                        ),
-                        TextSpan(
-                          text: ' your imagination.',
-                          style : TextStyle(
-                          fontSize: 30,
-                          letterSpacing: 0,
-                          fontWeight: FontWeight.bold,
-                          fontFamily: 'roboto',
-                          decoration: TextDecoration.none,
-                          color: Color.fromARGB(201, 0, 0, 0),
-                        )
-                        )
-                      ],
-                    ),
-                  ) ),
-                            const SizedBox(
-                              height: 30,
-                            ),
-                                                      
-                            Container(
-                              width: MediaQuery.of(context).size.width * 0.88,
-                              // color : Colors.blueAccent,
-                              alignment: Alignment.center,
+                          color: Color.fromARGB(255, 54, 52, 208))),
+                  TextSpan(
+                      text: ' we ',
+                      style: TextStyle(
+                        fontSize: 30,
+                        letterSpacing: 0,
+                        fontFamily: 'roboto',
+                        fontWeight: FontWeight.bold,
+                        decoration: TextDecoration.none,
+                        color: Color.fromARGB(201, 0, 0, 0),
+                      )),
+                  TextSpan(
+                      text: 'code',
+                      style: TextStyle(
+                        fontSize: 30,
+                        letterSpacing: 0,
+                        fontFamily: 'roboto',
+                        fontWeight: FontWeight.bold,
+                        decoration: TextDecoration.none,
+                        color: Color.fromARGB(201, 0, 0, 0),
+                      )),
+                  TextSpan(
+                      text: ' your imagination.',
+                      style: TextStyle(
+                        fontSize: 30,
+                        letterSpacing: 0,
+                        fontWeight: FontWeight.bold,
+                        fontFamily: 'roboto',
+                        decoration: TextDecoration.none,
+                        color: Color.fromARGB(201, 0, 0, 0),
+                      ))
+                ],
+              ),
+            )),
+        const SizedBox(
+          height: 30,
+        ),
 
-                              child: const Text(
-                                'Transforming Your Ideas into innovative apps ',
-                                style: TextStyle(
-                                  fontFamily: 'roboto',
-                                  fontSize: 16,
-                                  // color: Color(0xffFF576D),
-                                  // color: Color(0xff052659), 
-                                  color:Color.fromARGB(255, 54, 52, 208)
-                                ),
-                              ),
-                            ),
+        Container(
+          width: MediaQuery.of(context).size.width * 0.88,
+          // color : Colors.blueAccent,
+          alignment: Alignment.center,
 
-                            const SizedBox(
-                              height: 20,
-                            ),
+          child: const Text(
+            'Transforming Your Ideas into innovative apps ',
+            style: TextStyle(
+                fontFamily: 'roboto',
+                fontSize: 16,
+                // color: Color(0xffFF576D),
+                // color: Color(0xff052659),
+                color: Color.fromARGB(255, 54, 52, 208)),
+          ),
+        ),
 
-                            HoverEffectExample(hovMD),
+        const SizedBox(
+          height: 20,
+        ),
 
-                            
-                            const SizedBox(
-                              height: 40
-                            ),
-                            Container(
-                           
-                            width: MediaQuery.of(context).size.width * 0.65,
-                            alignment: Alignment.topCenter,
-                            // color:Colors.pink,
-                            child: ClipRRect(
-                            child: Image.asset(
-                            'assets/images/ved.jpg',
-                            fit : BoxFit.cover),),),
+        HoverEffectExample(hovMD),
 
-                           
-                           
-                          ]),
-                        ),
-                      ),
-                     
-                    ],
-                  );
+        const SizedBox(height: 40),
+        Container(
+          width: MediaQuery.of(context).size.width * 0.65,
+          alignment: Alignment.topCenter,
+          // color:Colors.pink,
+          child: ClipRRect(
+            child: Image.asset('assets/images/ved.jpg', fit: BoxFit.cover),
+          ),
+        ),
+      ]),
+    );
   }
 }

@@ -31,7 +31,7 @@ class phase3 extends StatelessWidget {
                   TextSpan(
                     text: 'Project Scoping.',
                     style: TextStyle(
-                      color: const Color.fromARGB(255, 255, 231, 11),
+                      color: Color.fromARGB(218, 205, 174, 0),
                       fontSize: 45,
                       fontFamily: 'roboto',
                       fontWeight: FontWeight.bold,
