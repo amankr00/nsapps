@@ -101,9 +101,7 @@ class AnimatedContainerItem extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Center(
-      child: AnimatedContainer(
-        duration: Duration(milliseconds: 1500),
-        curve: Curves.easeInOut,
+      child: Container(
         width:
             MediaQuery.of(context).size.width * 0.7, // Adjust width as needed
         height:
