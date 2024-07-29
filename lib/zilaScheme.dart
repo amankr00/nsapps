@@ -788,6 +788,8 @@ import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'dart:math';
 
+import 'package:flutter_svg/flutter_svg.dart';
+
 class NewPage extends StatefulWidget {
   final String schemeName;
   final String schemeFinHead;
@@ -802,26 +804,32 @@ class NewPage extends StatefulWidget {
 class _NewPageState extends State<NewPage> {
   static const IconData circle_outlined =
       IconData(0xef53, fontFamily: 'MaterialIcons');
-  // static const IconData linear_scale_rounded =
-  //     IconData(0xf858, fontFamily: 'MaterialIcons');
-  // static const IconData linear_scale_sharp =
-  //     IconData(0xea79, fontFamily: 'MaterialIcons');
-  // static const IconData line_weight_sharp =
-  //     IconData(0xea78, fontFamily: 'MaterialIcons');
-  // static const IconData circle_outlined2 =
-  //     IconData(0xef53, fontFamily: 'MaterialIcons');
 
   bool oe = false;
-
   Color background = Color(0xff004AAD);
   Color textColor = Colors.white;
   int counter = 0;
+
 
   final String schemeName;
   final String schemeFinHead;
   final String schemeFinYear;
   _NewPageState(this.schemeName, this.schemeFinHead, this.schemeFinYear);
 
+     List<String> rowData = [
+        "Scheme Details",
+        "NOC Letters",
+        "ACO Approval",
+        "DDC Approval"
+        "Ex Engg MB, Bills",
+        "MB Approved by TA",
+        "TA Monitoring",
+        "Ex Engg Work Order",
+        "Inspection by Ex Engg",
+        "Accountant File Put Up",
+        "DDC Final Approval",
+        "Scheme Completed"
+      ];
   @override
   Widget build(BuildContext context) {
     double wid = MediaQuery.of(context).size.width;
@@ -830,153 +838,196 @@ class _NewPageState extends State<NewPage> {
       home: Scaffold(
         backgroundColor: Color(0xff004AAD),
         body: SingleChildScrollView(
-          child: Column(
-            children: [
-              SizedBox(
-                height: 20,
-              ),
-              Text('ZILA PARISHAD NALANDA',
-                  style: TextStyle(
-                      color: textColor,
-                      fontSize: 50,
-                      fontFamily: 'poppins',
-                      decoration: TextDecoration.none)),
-              SizedBox(height: 20),
-              SizedBox(
-                height: 15,
-              ),
-              Container(
-                decoration: BoxDecoration(
-                  borderRadius: BorderRadius.circular(10),
-                  color: Color.fromARGB(255, 246, 195, 255),
-                ),
-                width: wid * 0.75,
-                child: Row(
-                  mainAxisAlignment: MainAxisAlignment.center,
-                  children: [
-                    Text('Financial Head :$schemeFinHead',
-                        style: TextStyle(
-                            color: Colors.black,
-                            fontSize: 20,
-                            fontFamily: 'lato1',
-                            decoration: TextDecoration.none)),
-                    SizedBox(width: 40),
-                    Text('Scheme Name : $schemeName',
-                        style: TextStyle(
-                            color: Colors.black,
-                            fontSize: 20,
-                            fontFamily: 'lato1',
-                            decoration: TextDecoration.none,
-                            fontWeight: FontWeight.normal)),
-                    SizedBox(width: 40),
-                    Text('Financial Year : $schemeFinYear',
-                        style: TextStyle(
-                            color: Colors.black,
-                            fontSize: 20,
-                            fontFamily: 'lato1',
-                            decoration: TextDecoration.none)),
-                  ],
-                ),
-              ),
-              SizedBox(height: 30),
-              for (int i = 0; i < 3; i++) ...[
-                roc(hei, wid, i),
-                SizedBox(height: 60),
-              ],
-              SizedBox(height: 100),
-            ],
-          ),
+          child: Expanded(
+              child: Stack(
+            children: cusRow(wid, context),
+          )),
         ),
       ),
     );
   }
 
-  int callCount = 0;
-
-  Stack roc(double hei, double wid, int i) {
-    bool curve = false;
-    // roc is true on every odd call
-    // bool roc = (callCount % 2 == 1); 
-
-    callCount++; // Increment call count after checking roc
-
-    List<String> rowData = [];
-    if (i == 0) {
-      rowData = [
-        "Scheme Details",
-        "NOC Letters",
-        "ACO Approval",
-        "DDC Approval"
-      ];
-    } else if (i == 1) {
-      rowData = [
-        "Ex Engg MB, Bills",
-        "MB Approved by TA",
-        "TA Monitoring",
-        "Ex Engg Work Order"
-      ];
-    } else if (i == 2) {
-      rowData = [
-        "Inspection by Ex Engg",
-        "Accountant File Put Up",
-        "DDC Final Approval",
-        "Scheme Completed"
-      ];
-    }
-
-    return Stack(
-      alignment: Alignment.center,
-      children: [
-        Positioned(
-          top: 27,
-          child: Container(
-            // color: textColor,
-            color:Colors.cyan,
-            height: 4,
-            width: MediaQuery.of(context).size.width * 0.75,
-          ),
-        ),
-        Row(
-          mainAxisAlignment: MainAxisAlignment.spaceAround,
-          children: [
-            for (var text in rowData)
-              chip(text, wid, hei, textColor, background),
-          ],
-        ),
-        // roc
-        //     ? Positioned(
-        //         top: MediaQuery.of(context).size.height * 0.022,
-        //         left: MediaQuery.of(context).size.width * 0.065,
-        //         child: SemicircleWidget(
-        //             radius: 116,
-        //             strokeWidth: 4,
-        //             color: textColor,
-        //             curve: curve),
-        //       )
-        //     : Positioned(
-        //         top: 29,
-        //         right: 65,
-        //         child: SemicircleWidget(
-        //             radius: 116,
-        //             strokeWidth: 4,
-        //             color: textColor,
-        //             curve: curve = true), // curve = true
-        //       )
-      ],
-    );
+  List<Widget> cusRow(double wid, BuildContext context) {
+    return [
+            Center(
+              child: Column(
+                mainAxisAlignment: MainAxisAlignment.center,
+                children: [
+                  SizedBox(height: 20),
+                  Text('ZILA PARISHAD NALANDA',
+                      style: TextStyle(
+                          color: textColor,
+                          fontSize: 50,
+                          fontFamily: 'poppins',
+                          decoration: TextDecoration.none)),
+                  SizedBox(width: 30),
+                  Container(
+                    decoration: BoxDecoration(
+                      borderRadius: BorderRadius.circular(10),
+                      color: Color.fromARGB(255, 246, 195, 255),
+                    ),
+                    width: wid * 0.75,
+                    child: Row(
+                      mainAxisAlignment: MainAxisAlignment.center,
+                      children: [
+                        Text('Financial Head :$schemeFinHead',
+                            style: TextStyle(
+                                color: Colors.black,
+                                fontSize: 20,
+                                fontFamily: 'lato1',
+                                decoration: TextDecoration.none)),
+                        SizedBox(width: 40),
+                        Text('Scheme Name : $schemeName',
+                            style: TextStyle(
+                                color: Colors.black,
+                                fontSize: 20,
+                                fontFamily: 'lato1',
+                                decoration: TextDecoration.none,
+                                fontWeight: FontWeight.normal)),
+                        SizedBox(width: 40),
+                        Text('Financial Year : $schemeFinYear',
+                            style: TextStyle(
+                                color: Colors.black,
+                                fontSize: 20,
+                                fontFamily: 'lato1',
+                                decoration: TextDecoration.none)),
+                      ],
+                    ),
+                  ),
+                  SizedBox(height: 30),
+                   
+                  const SizedBox(height: 1000),
+                ],
+              ),
+            ),
+            Positioned(
+                top: MediaQuery.of(context).size.height * 0.23,
+                right:MediaQuery.of(context).size.width * 0.03,
+                child: Container(
+                  // width: MediaQuery.of(context).size.width * 0.2,
+                  height: MediaQuery.of(context).size.height * 0.35,
+                  // color: Colors.cyan,
+                  child: SvgPicture.asset(
+                    // width: MediaQuery.of(context).size.width * 0.2,
+                    height: MediaQuery.of(context).size.height * 0.1,
+                    'assets/images/curve1.svg',
+                    fit: BoxFit.cover,
+                  ),
+                )),
+             Positioned(
+      top: 229,
+      left:MediaQuery.of(context).size.width * 0.12,
+      child: Container(
+        color: Colors.black,
+        height: 4,
+        width: MediaQuery.of(context).size.width * 0.74,
+      ),
+    ),
+             Positioned(
+      top: 429,
+      left:MediaQuery.of(context).size.width * 0.12,
+      child: Container(
+        color: Colors.black,
+        height: 4,
+        width: MediaQuery.of(context).size.width * 0.74,
+      ),
+    ),
+             Positioned(
+      top: 629,
+      left:MediaQuery.of(context).size.width * 0.12,
+      child: Container(
+        color: Colors.black,
+        height: 4,
+        width: MediaQuery.of(context).size.width * 0.74,
+      ),
+    ),
+             ro(context , 1),
+             ro(context , 2),
+             ro(context ,  3),
+            
+          ];
   }
+
+  Positioned ro(BuildContext context , int i) {
+    return Positioned(
+                  top : i*200,
+                  child: 
+                Container(
+                // color:Colors.deepOrangeAccent,
+                alignment: Alignment.center,
+                width : MediaQuery.of(context).size.width  * 1.1,
+                child : 
+                Row(
+                crossAxisAlignment: CrossAxisAlignment.center,
+                mainAxisAlignment: MainAxisAlignment.spaceAround,
+                children: [
+                 for (int i = 0; i < 4; i++) ...[
+                  chip('gf',78,678,Colors.black,Colors.white ),
+                ],
+                  SizedBox(height: 60),
+                ],)));
+  }
+
+  // int callCount = 0;
+
+  // roc(double hei, double wid, int i) {
+  //   bool curve = false;
+  //   // roc is true on every odd call
+  //   bool roc = (callCount % 2 == 1);
+
+  //   callCount++; // Increment call count after checking roc
+
+  //   List<String> rowData = [];
+  //   if (i == 0) {
+  //     rowData = [
+  //       "Scheme Details",
+  //       "NOC Letters",
+  //       "ACO Approval",
+  //       "DDC Approval"
+  //     ];
+  //   } else if (i == 1) {
+  //     rowData = [
+  //       "Ex Engg MB, Bills",
+  //       "MB Approved by TA",
+  //       "TA Monitoring",
+  //       "Ex Engg Work Order"
+  //     ];
+  //   } else if (i == 2) {
+  //     rowData = [
+  //       "Inspection by Ex Engg",
+  //       "Accountant File Put Up",
+  //       "DDC Final Approval",
+  //       "Scheme Completed"
+  //     ];
+  //   }
+
+  //   return Stack(alignment: Alignment.center, children: [
+  //     Positioned(
+  //       top: 27,
+  //       child: Container(
+  //         color: Colors.black,
+  //         height: 4,
+  //         width: MediaQuery.of(context).size.width * 0.75,
+  //       ),
+  //     ),
+  //     Positioned(
+  //       child: Row(
+  //       mainAxisAlignment: MainAxisAlignment.spaceAround,
+  //       children: [
+  //         chip('text', wid, hei, textColor, background),
+  //       ],
+  //     )),
+  //   ]);
+  // }
 
   Container chip(
       String t1, double wid, double hei, Color colort, Color colorb) {
     return Container(
         alignment: Alignment.center,
-        width: MediaQuery.of(context).size.width / 8,
+        width: MediaQuery.of(context).size.width / 7.8,
         height: MediaQuery.of(context).size.height / 4.7,
         decoration: BoxDecoration(
           borderRadius: BorderRadius.circular(20),
-          // color:Colors.black,
-          //  color:Color.fromARGB(255, 9, 8, 58),
-          // color:Colors.white,
         ),
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.center,
@@ -1001,9 +1052,14 @@ class _NewPageState extends State<NewPage> {
                 ),
               ],
             ),
-
             Container(
-            // color:Colors.indigoAccent,
+              alignment: Alignment.center,
+              decoration: BoxDecoration(
+              color:Colors.indigoAccent,
+              borderRadius: BorderRadius.circular(40)
+              
+              ),
+              // width: MediaQuery.of(context).size.width * 0.5,
               child: Text(t1,
                   style: TextStyle(
                       color: textColor,
@@ -1015,120 +1071,20 @@ class _NewPageState extends State<NewPage> {
             SizedBox(
               height: 20,
             ),
-            // Container(
-            // // color:Color.fromARGB(255, 4, 58, 47),
-            //   child: Text('Click here to download!',
-            //       style: TextStyle(
-            //         color: textColor,
-            //         fontFamily: 'lato1',
-            //         fontSize: 16,
-            //       )),
-            // ),
-            // SizedBox(
-              // height: 5,
-            // ),
-            Padding(
-              padding: EdgeInsets.only(left: 15),
-              child: Container(
-            // color:Color.fromARGB(255, 89, 83, 4),
-                width: MediaQuery.of(context).size.width * 0.065,
-                child: Text(
-                textAlign: TextAlign.center,
-                    'Lorem ipsum dolor sit amet, consectetur adipiscing elit.',
-                    style: TextStyle(
-                        fontFamily: 'lato1',
-                        fontSize: 14,
-                        color: textColor,
-                        decoration: TextDecoration.none,
-                        fontWeight: FontWeight.normal)),
-              ),
-            ),
+            Container(
+              // color:Color.fromARGB(255, 89, 83, 4),
+              width: MediaQuery.of(context).size.width * 0.12,
+              child: Text(
+                  textAlign: TextAlign.center,
+                  'Lorem ipsum dolor sit amet, consectetur adipiscing elit.',
+                  style: TextStyle(
+                      fontFamily: 'lato1',
+                      fontSize: 14,
+                      color: textColor,
+                      decoration: TextDecoration.none,
+                      fontWeight: FontWeight.normal)),
+            )
           ],
         ));
-  }
-}
-
-class SemicircleWidget extends StatelessWidget {
-  final double radius;
-  final double strokeWidth;
-  final Color color;
-  bool curve;
-
-  SemicircleWidget(
-      {required this.radius,
-      required this.strokeWidth,
-      required this.color,
-      required this.curve});
-
-  @override
-  Widget build(BuildContext context) {
-    return CustomPaint(
-      painter: curve
-          ? SemicirclePainter1(strokeWidth: strokeWidth, color: color)
-          : SemicirclePainter(strokeWidth: strokeWidth, color: color),
-      size: Size(radius * 2, radius),
-    );
-  }
-}
-
-class SemicirclePainter extends CustomPainter {
-  final double strokeWidth;
-  final Color color;
-
-  SemicirclePainter({required this.strokeWidth, required this.color});
-
-  @override
-  void paint(Canvas canvas, Size size) {
-    Paint paint = Paint()
-      ..color = color
-      ..strokeWidth = strokeWidth
-      ..style = PaintingStyle.stroke;
-
-    double radius = size.width / 2;
-
-    canvas.drawArc(
-      Rect.fromCircle(
-          center: Offset(size.width / 2, size.height), radius: radius),
-      pi - 1.6,
-      pi,
-      false,
-      paint,
-    );
-  }
-
-  @override
-  bool shouldRepaint(covariant CustomPainter oldDelegate) {
-    return false;
-  }
-}
-
-class SemicirclePainter1 extends CustomPainter {
-  final double strokeWidth;
-  final Color color;
-
-  SemicirclePainter1({required this.strokeWidth, required this.color});
-
-  @override
-  void paint(Canvas canvas, Size size) {
-    Paint paint = Paint()
-      ..color = color
-      ..strokeWidth = strokeWidth
-      ..style = PaintingStyle.stroke;
-
-    double radius = size.width / 2;
-
-    canvas.drawArc(
-      Rect.fromCircle(
-          center: Offset(size.width / 2, size.height), radius: radius),
-      pi + 1.55,
-      pi,
-      false,
-      paint,
-    );
-  }
-
-  @override
-  bool shouldRepaint(covariant CustomPainter oldDelegate) {
-    return false;
   }
 }
