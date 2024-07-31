@@ -901,15 +901,17 @@ class _NewPageState extends State<NewPage> {
               ),
             ),
             Positioned(
-                top: MediaQuery.of(context).size.height * 0.23,
-                right:MediaQuery.of(context).size.width * 0.03,
+                // top: MediaQuery.of(context).size.height * 0.23,
+                top:190,
+                right:-30,
                 child: Container(
+                
+                    width: MediaQuery.of(context).size.width * 0.2,
                   // width: MediaQuery.of(context).size.width * 0.2,
-                  height: MediaQuery.of(context).size.height * 0.35,
+                  height: 280,
                   // color: Colors.cyan,
                   child: SvgPicture.asset(
-                    // width: MediaQuery.of(context).size.width * 0.2,
-                    height: MediaQuery.of(context).size.height * 0.1,
+                    height: 100,
                     'assets/images/curve1.svg',
                     fit: BoxFit.cover,
                   ),
