@@ -781,19 +781,289 @@
 //               ),
 //             ],
 //           )));
+// // }
+
+// import 'package:flutter/animation.dart';
+// import 'package:flutter/cupertino.dart';
+// import 'package:flutter/material.dart';
+// import 'package:flutter_svg/flutter_svg.dart';
+
+// class NewPage extends StatefulWidget {
+//   final String schemeName;
+//   final String schemeFinHead;
+//   final String schemeFinYear;
+//   NewPage(this.schemeName, this.schemeFinHead, this.schemeFinYear);
+
+//   @override
+//   _NewPageState createState() =>
+//       _NewPageState(schemeName, schemeFinHead, schemeFinYear);
 // }
 
+// class _NewPageState extends State<NewPage> {
+//   static const IconData circle_outlined =
+//       IconData(0xef53, fontFamily: 'MaterialIcons');
+
+//   bool oe = false;
+//   Color background = Color(0xff004AAD);
+//   Color textColor = Colors.white;
+//   int counter = 0;
+
+//   final String schemeName;
+//   final String schemeFinHead;
+//   final String schemeFinYear;
+//   _NewPageState(this.schemeName, this.schemeFinHead, this.schemeFinYear);
+
+//   List<String> rowData1 = [
+//     "Scheme Details",
+//     "NOC Letters",
+//     "ACO Approval",
+//     "DDC Approval"
+//   ];
+//   List<String> rowData2 = [
+//     "Ex Engg MB, Bills",
+//     "MB Approved by TA",
+//     "TA Monitoring",
+//     "Ex Engg Work Order",
+//   ];
+//   List<String> rowData3 = [
+//     "Inspection by Ex Engg",
+//     "Accountant File Put Up",
+//     "DDC Final Approval",
+//     "Scheme Completed"
+//   ];
+//   @override
+//   Widget build(BuildContext context) {
+//     double wid = MediaQuery.of(context).size.width;
+//     double hei = MediaQuery.of(context).size.height;
+//     return MaterialApp(
+//       home: Scaffold(
+//         backgroundColor: Color(0xff004AAD),
+//         body: SingleChildScrollView(
+//           child: Expanded(
+//               child: Stack(
+//             children: cusRow(wid, context),
+//           )),
+//         ),
+//       ),
+//     );
+//   }
+
+//   List<Widget> cusRow(double wid, BuildContext context) {
+//     return [
+//       Center(
+//         child: Column(
+//           mainAxisAlignment: MainAxisAlignment.center,
+//           children: [
+//             SizedBox(height: 20),
+//             Text('ZILA PARISHAD NALANDA',
+//                 style: TextStyle(
+//                     color: textColor,
+//                     fontSize: 44,
+//                     fontFamily: 'poppins',
+//                     decoration: TextDecoration.none)),
+//             SizedBox(height: 10),
+//             Container(
+//               decoration: BoxDecoration(
+//                 borderRadius: BorderRadius.circular(10),
+//                 color: Color.fromARGB(255, 246, 195, 255),
+//               ),
+//               width: wid * 0.75,
+//               child: Row(
+//                 mainAxisAlignment: MainAxisAlignment.center,
+//                 children: [
+//                   Text('Financial Head :$schemeFinHead',
+//                       style: TextStyle(
+//                           color: Colors.black,
+//                           fontSize: 16,
+//                           fontFamily: 'lato1',
+//                           decoration: TextDecoration.none)),
+//                   SizedBox(width: 40),
+//                   Text('Scheme Name : $schemeName',
+//                       style: TextStyle(
+//                           color: Colors.black,
+//                           fontSize: 16,
+//                           fontFamily: 'lato1',
+//                           decoration: TextDecoration.none,
+//                           fontWeight: FontWeight.normal)),
+//                   SizedBox(width: 40),
+//                   Text('Financial Year : $schemeFinYear',
+//                       style: TextStyle(
+//                           color: Colors.black,
+//                           fontSize: 16,
+//                           fontFamily: 'lato1',
+//                           decoration: TextDecoration.none)),
+//                 ],
+//               ),
+//             ),
+//             const SizedBox(height: 1000),
+//           ],
+//         ),
+//       ),
+//       Positioned(
+//           // top: MediaQuery.of(context).size.height * 0.23,
+//           top: 160,
+//           right: -30,
+//           child: Container(
+//             width: MediaQuery.of(context).size.width * 0.2,
+//             // width: MediaQuery.of(context).size.width * 0.2,
+//             height: 250,
+//             // color: Colors.cyan,
+//             child: SvgPicture.asset(
+//               height: 100,
+//               'assets/images/curve1.svg',
+//               fit: BoxFit.cover,
+//             ),
+//           )),
+//       Positioned(
+//         top: 200,
+//         left: MediaQuery.of(context).size.width * 0.12,
+//         child: Container(
+//           color: const Color.fromARGB(255, 255, 255, 255),
+//           height: 3,
+//           width: MediaQuery.of(context).size.width * 0.74,
+//         ),
+//       ),
+//       Positioned(
+//         top: 370,
+//         left: MediaQuery.of(context).size.width * 0.12,
+//         child: Container(
+//           color: const Color.fromARGB(255, 255, 255, 255),
+//           height: 3,
+//           width: MediaQuery.of(context).size.width * 0.74,
+//         ),
+//       ),
+//       Positioned(
+//         top: 540,
+//         left: MediaQuery.of(context).size.width * 0.12,
+//         child: Container(
+//           color: const Color.fromARGB(255, 255, 255, 255),
+//           height: 3,
+//           width: MediaQuery.of(context).size.width * 0.74,
+//         ),
+//       ),
+//       ro(context, 1, rowData1),
+//       ro(context, 2, rowData2),
+//       ro(context, 3, rowData3),
+//     ];
+//   }
+
+//   Positioned ro(BuildContext context, int i, List<String> list) {
+//     return Positioned(
+//         top: i * 170,
+//         child: Container(
+//             // color:const Color.fromARGB(48, 255, 158, 128),
+//             alignment: Alignment.center,
+//             width: MediaQuery.of(context).size.width * 1.1,
+//             child: Row(
+//               crossAxisAlignment: CrossAxisAlignment.center,
+//               mainAxisAlignment: MainAxisAlignment.spaceAround,
+//               children: [
+//                 for (int i = 0; i < 4; i++) ...[
+
+//                   chip(list[i], 78, 678, Colors.black, Colors.white),
+//                 ],
+//                 SizedBox(height: 60),
+//               ],
+//             )));
+//   }
+
+//   MouseRegion chip(
+//       String t1, double wid, double hei, Color colort, Color colorb ) {
+//       bool _isHovered  = false;
+//     return MouseRegion(
+//      onEnter: (_) {
+//         setState(() {
+//           _isHovered = true;
+//         });
+//       },
+//       onExit: (_) {
+//         setState(() {
+//           _isHovered = false;
+//         });
+//       },
+//         child: Container(
+//             alignment: Alignment.center,
+//             width: MediaQuery.of(context).size.width / 7.8,
+//             height: MediaQuery.of(context).size.height / 4.7,
+//             decoration: BoxDecoration(
+//               borderRadius: BorderRadius.circular(20),
+//               color: _isHovered ? Colors.black : Color.white,
+//             ),
+//             child: Column(
+//               crossAxisAlignment: CrossAxisAlignment.center,
+//               children: [
+//                 // as one circle and background to hide behind white horizontal line
+//                 Stack(
+//                   alignment: Alignment.center,
+//                   children: [
+//                     Positioned(
+//                       child: Container(
+//                         width: 60,
+//                         height: 60,
+//                         decoration: BoxDecoration(
+//                           borderRadius: BorderRadius.circular(30),
+//                           color: colorb,
+//                         ),
+//                       ),
+//                     ),
+//                     Icon(
+//                       circle_outlined,
+//                       size: 35,
+//                       color: colort,
+//                     ),
+//                   ],
+//                 ),
+//                 SizedBox(height: 3),
+//                 Container(
+//                   width: MediaQuery.of(context).size.width * 0.12,
+//                   // color:Colors.indigoAccent,
+//                   alignment: Alignment.center,
+//                   // decoration: BoxDecoration(
+//                   // borderRadius: BorderRadius.circular(40)
+
+//                   // ),
+//                   // width: MediaQuery.of(context).size.width * 0.5,
+//                   child: Text(t1,
+//                       textAlign: TextAlign.center,
+//                       style: TextStyle(
+//                           color: textColor,
+//                           fontFamily: 'lato',
+//                           fontSize: 16,
+//                           decoration: TextDecoration.none,
+//                           fontWeight: FontWeight.w400)),
+//                 ),
+//                 SizedBox(
+//                   height: 8,
+//                 ),
+//                 Container(
+//                   // color:Color.fromARGB(255, 89, 83, 4),
+//                   width: MediaQuery.of(context).size.width * 0.06,
+//                   height: MediaQuery.of(context).size.height * 0.045,
+//                   child: Text(
+//                       textAlign: TextAlign.center,
+//                       'Lorem ipsum dolor sit amet, consectetur adipiscing elit.',
+//                       style: TextStyle(
+//                           fontFamily: 'lato1',
+//                           fontSize: 10,
+//                           color: textColor,
+//                           decoration: TextDecoration.none,
+//                           fontWeight: FontWeight.normal)),
+//                 )
+//               ],
+//             )));
+//   }
+// }
 import 'package:flutter/animation.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
-import 'dart:math';
-
 import 'package:flutter_svg/flutter_svg.dart';
+import 'package:url_launcher/url_launcher.dart';
 
 class NewPage extends StatefulWidget {
   final String schemeName;
   final String schemeFinHead;
   final String schemeFinYear;
+
   NewPage(this.schemeName, this.schemeFinHead, this.schemeFinYear);
 
   @override
@@ -810,26 +1080,30 @@ class _NewPageState extends State<NewPage> {
   Color textColor = Colors.white;
   int counter = 0;
 
-
   final String schemeName;
   final String schemeFinHead;
   final String schemeFinYear;
   _NewPageState(this.schemeName, this.schemeFinHead, this.schemeFinYear);
 
-     List<String> rowData = [
-        "Scheme Details",
-        "NOC Letters",
-        "ACO Approval",
-        "DDC Approval"
-        "Ex Engg MB, Bills",
-        "MB Approved by TA",
-        "TA Monitoring",
-        "Ex Engg Work Order",
-        "Inspection by Ex Engg",
-        "Accountant File Put Up",
-        "DDC Final Approval",
-        "Scheme Completed"
-      ];
+  List<String> rowData1 = [
+    "Scheme Details",
+    "NOC Letters",
+    "ACO Approval",
+    "DDC Approval"
+  ];
+  List<String> rowData2 = [
+    "Ex Engg MB, Bills",
+    "MB Approved by TA",
+    "TA Monitoring",
+    "Ex Engg Work Order",
+  ];
+  List<String> rowData3 = [
+    "Inspection by Ex Engg",
+    "Accountant File Put Up",
+    "DDC Final Approval",
+    "Scheme Completed"
+  ];
+
   @override
   Widget build(BuildContext context) {
     double wid = MediaQuery.of(context).size.width;
@@ -846,194 +1120,197 @@ class _NewPageState extends State<NewPage> {
       ),
     );
   }
+  
 
   List<Widget> cusRow(double wid, BuildContext context) {
     return [
-            Center(
-              child: Column(
+      Center(
+        child: Column(
+          mainAxisAlignment: MainAxisAlignment.center,
+          children: [
+            SizedBox(height: 20),
+            Text('ZILA PARISHAD NALANDA',
+                style: TextStyle(
+                    color: textColor,
+                    fontSize: 44,
+                    fontFamily: 'poppins',
+                    decoration: TextDecoration.none)),
+            SizedBox(height: 10),
+            Container(
+              decoration: BoxDecoration(
+                borderRadius: BorderRadius.circular(10),
+                color: Color.fromARGB(255, 246, 195, 255),
+              ),
+              width: wid * 0.75,
+              child: Row(
                 mainAxisAlignment: MainAxisAlignment.center,
                 children: [
-                  SizedBox(height: 20),
-                  Text('ZILA PARISHAD NALANDA',
+                  Text('Financial Head :$schemeFinHead',
                       style: TextStyle(
-                          color: textColor,
-                          fontSize: 50,
-                          fontFamily: 'poppins',
+                          color: Colors.black,
+                          fontSize: 16,
+                          fontFamily: 'lato1',
                           decoration: TextDecoration.none)),
-                  SizedBox(width: 30),
-                  Container(
-                    decoration: BoxDecoration(
-                      borderRadius: BorderRadius.circular(10),
-                      color: Color.fromARGB(255, 246, 195, 255),
-                    ),
-                    width: wid * 0.75,
-                    child: Row(
-                      mainAxisAlignment: MainAxisAlignment.center,
-                      children: [
-                        Text('Financial Head :$schemeFinHead',
-                            style: TextStyle(
-                                color: Colors.black,
-                                fontSize: 20,
-                                fontFamily: 'lato1',
-                                decoration: TextDecoration.none)),
-                        SizedBox(width: 40),
-                        Text('Scheme Name : $schemeName',
-                            style: TextStyle(
-                                color: Colors.black,
-                                fontSize: 20,
-                                fontFamily: 'lato1',
-                                decoration: TextDecoration.none,
-                                fontWeight: FontWeight.normal)),
-                        SizedBox(width: 40),
-                        Text('Financial Year : $schemeFinYear',
-                            style: TextStyle(
-                                color: Colors.black,
-                                fontSize: 20,
-                                fontFamily: 'lato1',
-                                decoration: TextDecoration.none)),
-                      ],
-                    ),
-                  ),
-                  SizedBox(height: 30),
-                   
-                  const SizedBox(height: 1000),
+                  SizedBox(width: 40),
+                  Text('Scheme Name : $schemeName',
+                      style: TextStyle(
+                          color: Colors.black,
+                          fontSize: 16,
+                          fontFamily: 'lato1',
+                          decoration: TextDecoration.none,
+                          fontWeight: FontWeight.normal)),
+                  SizedBox(width: 40),
+                  Text('Financial Year : $schemeFinYear',
+                      style: TextStyle(
+                          color: Colors.black,
+                          fontSize: 16,
+                          fontFamily: 'lato1',
+                          decoration: TextDecoration.none)),
                 ],
               ),
             ),
-            Positioned(
-                // top: MediaQuery.of(context).size.height * 0.23,
-                top:190,
-                right:-30,
-                child: Container(
-                
-                    width: MediaQuery.of(context).size.width * 0.2,
-                  // width: MediaQuery.of(context).size.width * 0.2,
-                  height: 280,
-                  // color: Colors.cyan,
-                  child: SvgPicture.asset(
-                    height: 100,
-                    'assets/images/curve1.svg',
-                    fit: BoxFit.cover,
-                  ),
-                )),
-             Positioned(
-      top: 229,
-      left:MediaQuery.of(context).size.width * 0.12,
-      child: Container(
-        color: Colors.black,
-        height: 4,
-        width: MediaQuery.of(context).size.width * 0.74,
+            const SizedBox(height: 1000),
+          ],
+        ),
       ),
-    ),
-             Positioned(
-      top: 429,
-      left:MediaQuery.of(context).size.width * 0.12,
-      child: Container(
-        color: Colors.black,
-        height: 4,
-        width: MediaQuery.of(context).size.width * 0.74,
+      Positioned(
+          // top: MediaQuery.of(context).size.height * 0.23,
+          top: 165,
+          right: -25,
+          child: Container(
+              width: MediaQuery.of(context).size.width * 0.2,
+              // width: MediaQuery.of(context).size.width * 0.2,
+              height: 240,
+              // color: Colors.cyan,
+              child: Image.asset('assets/images/hc.png',
+                  // height: 80, 
+                  fit: BoxFit.cover)
+              // SvgPicture.asset(
+              //   height: 100,
+              //   'assets/images/hc.svg',
+              //   fit: BoxFit.cover,
+              // ),
+              )),
+      Positioned(
+          // top: MediaQuery.of(context).size.height * 0.23,
+          top: 335,
+          left: -50,
+          child: Container(
+              width: MediaQuery.of(context).size.width * 0.2,
+              // width: MediaQuery.of(context).size.width * 0.2,
+              height: 240,
+              // color: Colors.cyan,
+              child: Image.asset('assets/images/hc2.png',
+                  // height: 60,
+                   fit: BoxFit.cover)
+              // SvgPicture.asset(
+              //   height: 100,
+              //   'assets/images/hc.svg',
+              //   fit: BoxFit.cover,
+              // ),
+              )),
+      Positioned(
+        top: 200,
+        left: MediaQuery.of(context).size.width * 0.12,
+        child: Container(
+          color: const Color.fromARGB(255, 255, 255, 255),
+          height: 3,
+          width: MediaQuery.of(context).size.width * 0.74,
+        ),
       ),
-    ),
-             Positioned(
-      top: 629,
-      left:MediaQuery.of(context).size.width * 0.12,
-      child: Container(
-        color: Colors.black,
-        height: 4,
-        width: MediaQuery.of(context).size.width * 0.74,
+      Positioned(
+        top: 370,
+        left: MediaQuery.of(context).size.width * 0.12,
+        child: Container(
+          color: const Color.fromARGB(255, 255, 255, 255),
+          height: 3,
+          width: MediaQuery.of(context).size.width * 0.74,
+        ),
       ),
-    ),
-             ro(context , 1),
-             ro(context , 2),
-             ro(context ,  3),
-            
-          ];
+      Positioned(
+        top: 540,
+        left: MediaQuery.of(context).size.width * 0.12,
+        child: Container(
+          color: const Color.fromARGB(255, 255, 255, 255),
+          height: 3,
+          width: MediaQuery.of(context).size.width * 0.74,
+        ),
+      ),
+      ro(context, 1, rowData1),
+      ro(context, 2, rowData2),
+      ro(context, 3, rowData3),
+    ];
   }
 
-  Positioned ro(BuildContext context , int i) {
+  Positioned ro(BuildContext context, int i, List<String> list) {
     return Positioned(
-                  top : i*200,
-                  child: 
-                Container(
-                // color:Colors.deepOrangeAccent,
-                alignment: Alignment.center,
-                width : MediaQuery.of(context).size.width  * 1.1,
-                child : 
-                Row(
-                crossAxisAlignment: CrossAxisAlignment.center,
-                mainAxisAlignment: MainAxisAlignment.spaceAround,
-                children: [
-                 for (int i = 0; i < 4; i++) ...[
-                  chip('gf',78,678,Colors.black,Colors.white ),
+        top: i * 170,
+        child: Container(
+            alignment: Alignment.center,
+            width: MediaQuery.of(context).size.width * 1.1,
+            child: Row(
+              crossAxisAlignment: CrossAxisAlignment.center,
+              mainAxisAlignment: MainAxisAlignment.spaceAround,
+              children: [
+                for (int i = 0; i < 4; i++) ...[
+                  HoverChip(list[i], 78, 678, Colors.black, Colors.white),
                 ],
-                  SizedBox(height: 60),
-                ],)));
+                SizedBox(height: 60),
+              ],
+            )));
   }
+}
 
-  // int callCount = 0;
+class HoverChip extends StatefulWidget {
+  final String t1;
+  final double wid;
+  final double hei;
+  final Color colort;
+  final Color colorb;
 
-  // roc(double hei, double wid, int i) {
-  //   bool curve = false;
-  //   // roc is true on every odd call
-  //   bool roc = (callCount % 2 == 1);
+  HoverChip(this.t1, this.wid, this.hei, this.colort, this.colorb);
 
-  //   callCount++; // Increment call count after checking roc
+  @override
+  _HoverChipState createState() => _HoverChipState();
+}
 
-  //   List<String> rowData = [];
-  //   if (i == 0) {
-  //     rowData = [
-  //       "Scheme Details",
-  //       "NOC Letters",
-  //       "ACO Approval",
-  //       "DDC Approval"
-  //     ];
-  //   } else if (i == 1) {
-  //     rowData = [
-  //       "Ex Engg MB, Bills",
-  //       "MB Approved by TA",
-  //       "TA Monitoring",
-  //       "Ex Engg Work Order"
-  //     ];
-  //   } else if (i == 2) {
-  //     rowData = [
-  //       "Inspection by Ex Engg",
-  //       "Accountant File Put Up",
-  //       "DDC Final Approval",
-  //       "Scheme Completed"
-  //     ];
-  //   }
+class _HoverChipState extends State<HoverChip> {
+  bool _isHovered = false;
 
-  //   return Stack(alignment: Alignment.center, children: [
-  //     Positioned(
-  //       top: 27,
-  //       child: Container(
-  //         color: Colors.black,
-  //         height: 4,
-  //         width: MediaQuery.of(context).size.width * 0.75,
-  //       ),
-  //     ),
-  //     Positioned(
-  //       child: Row(
-  //       mainAxisAlignment: MainAxisAlignment.spaceAround,
-  //       children: [
-  //         chip('text', wid, hei, textColor, background),
-  //       ],
-  //     )),
-  //   ]);
-  // }
-
-  Container chip(
-      String t1, double wid, double hei, Color colort, Color colorb) {
-    return Container(
+  @override
+  Widget build(BuildContext context) {
+    return MouseRegion(
+      onEnter: (_) {
+        setState(() {
+          _isHovered = true;
+        });
+      },
+      onExit: (_) {
+        setState(() {
+          _isHovered = false;
+        });
+      },
+      child: Container(
         alignment: Alignment.center,
         width: MediaQuery.of(context).size.width / 7.8,
         height: MediaQuery.of(context).size.height / 4.7,
         decoration: BoxDecoration(
           borderRadius: BorderRadius.circular(20),
+          // boxShadow: [
+          //   BoxShadow(
+          //     color: _isHovered
+          //         ? Color.fromARGB(255, 0, 0, 0).withOpacity(0.3)
+          //         : Colors.white.withOpacity(0.3),
+          //     spreadRadius: 5,
+          //     blurRadius: 7,
+          //     offset: Offset(0, 3), // changes position of shadow
+          //   ),
+          // ],
         ),
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.center,
           children: [
+            // as one circle and background to hide behind white horizontal line
             Stack(
               alignment: Alignment.center,
               children: [
@@ -1043,50 +1320,181 @@ class _NewPageState extends State<NewPage> {
                     height: 60,
                     decoration: BoxDecoration(
                       borderRadius: BorderRadius.circular(30),
-                      color: colorb,
+                      color: widget.colorb,
                     ),
                   ),
                 ),
                 Icon(
-                  circle_outlined,
+                  _NewPageState.circle_outlined,
                   size: 35,
-                  color: colort,
+                  color: widget.colort,
                 ),
               ],
             ),
+            SizedBox(height: 3),
+            GestureDetector(
+            onTap: (){
+            showDialog(
+            context: context,
+            // useRootNavigator: false,
+            // Navigator.pop(context, true),
+            builder: (BuildContext context) {
+              return Container(
+                  // color:Colors.white,
+                  child: PDFdownloadNOC(context , "rowdata2[1"));
+            },
+          );
+            },
+           child: 
             Container(
+              width: MediaQuery.of(context).size.width * 0.12,
               alignment: Alignment.center,
-              decoration: BoxDecoration(
-              color:Colors.indigoAccent,
-              borderRadius: BorderRadius.circular(40)
-              
-              ),
-              // width: MediaQuery.of(context).size.width * 0.5,
-              child: Text(t1,
+              child: Text(widget.t1,
+                  textAlign: TextAlign.center,
                   style: TextStyle(
-                      color: textColor,
+                      color: _isHovered ?  Colors.amber:Colors.white,
                       fontFamily: 'lato',
-                      fontSize: 18,
+                      fontSize: 16,
                       decoration: TextDecoration.none,
                       fontWeight: FontWeight.w400)),
+            )
             ),
-            SizedBox(
-              height: 20,
-            ),
+            SizedBox(height: 8),
             Container(
-              // color:Color.fromARGB(255, 89, 83, 4),
-              width: MediaQuery.of(context).size.width * 0.12,
+              width: MediaQuery.of(context).size.width * 0.06,
+              height: MediaQuery.of(context).size.height * 0.045,
               child: Text(
                   textAlign: TextAlign.center,
                   'Lorem ipsum dolor sit amet, consectetur adipiscing elit.',
                   style: TextStyle(
                       fontFamily: 'lato1',
-                      fontSize: 14,
-                      color: textColor,
+                      fontSize: 10,
+                      color: Colors.white,
                       decoration: TextDecoration.none,
                       fontWeight: FontWeight.normal)),
-            )
+            ),
           ],
-        ));
+        ),
+      ),
+    );
   }
+}
+
+Center PDFdownloadNOC(BuildContext context, t1) {
+  const IconData download_for_offline = IconData(
+    0xe203,
+    fontFamily: 'MaterialIcons',
+  );
+  return Center(
+    child: Container(
+        height: MediaQuery.of(context).size.height * 0.6,
+        width: MediaQuery.of(context).size.width * 0.7,
+        color: Colors.white,
+        alignment: Alignment.center,
+        child: Stack(
+          children: [
+            Positioned(
+                child: Container(
+                    height: 70,
+                    width: MediaQuery.of(context).size.width * 0.7,
+                    color: Color.fromARGB(98, 139, 166, 255))),
+            Column(
+              children: [
+                SizedBox(
+                  height: 20,
+                ),
+                Text(
+                  t1,
+                  style: TextStyle(
+                      color: Color.fromARGB(255, 0, 0, 0),
+                      fontSize: 30,
+                      fontWeight: FontWeight.bold,
+                      decoration: TextDecoration.none),
+                ),
+                SizedBox(
+                  height: 70,
+                ),
+                Row(
+                  mainAxisAlignment: MainAxisAlignment.center,
+                  crossAxisAlignment: CrossAxisAlignment.start,
+                  children: [
+                    smallChip(download_for_offline, 'BDO', context),
+                    SizedBox(
+                      width: 20,
+                    ),
+                    smallChip(download_for_offline, 'CO', context),
+                    SizedBox(
+                      width: 20,
+                    ),
+                    smallChip(download_for_offline, 'PO', context),
+                    SizedBox(
+                      width: 20,
+                    ),
+                    smallChip(download_for_offline, 'Ex Engineer', context),
+                    SizedBox(
+                      width: 20,
+                    ),
+                    smallChip(download_for_offline, 'TA', context),
+                    // SizedBox(width: 20,),
+                    // Container(),
+                    // Container(),
+                  ],
+                ),
+              ],
+            ),
+          ],
+        )),
+  );
+}
+
+
+GestureDetector smallChip(
+    IconData download_for_offline, String holder, context) {
+  return GestureDetector(
+      onTap: () async {
+        const url = 'https://rti.gov.in/rti-act.pdf';
+        if (await canLaunch(url)) {
+          await launch(url);
+        } else {
+          throw 'Could not launch $url';
+        }
+      },
+      child: Container(
+          width: 150,
+          height: 165,
+          decoration: BoxDecoration(
+              borderRadius: BorderRadius.circular(20),
+              color: Color.fromARGB(255, 221, 238, 226)),
+          child: Column(
+            children: [
+              SizedBox(
+                height: 10,
+              ),
+              Container(
+                  height: 60,
+                  width: 60,
+                  child: Image.asset('assets/images/doneTick.png',
+                      fit: BoxFit.cover)),
+              SizedBox(
+                height: 10,
+              ),
+              Container(
+                child: Icon(
+                  download_for_offline,
+                  size: 45,
+                ),
+              ),
+              SizedBox(
+                height: 10,
+              ),
+              Text(
+                holder,
+                style: TextStyle(
+                    color: Colors.black,
+                    fontSize: 20,
+                    fontWeight: FontWeight.bold,
+                    decoration: TextDecoration.none),
+              ),
+            ],
+          )));
 }

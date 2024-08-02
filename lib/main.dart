@@ -26,8 +26,8 @@ class MyApp extends StatelessWidget {
           fontFamily: GoogleFonts.archivoBlack().fontFamily),
       initialRoute: '/',
       routes: {
-       '/': (context) => HomeMain(title: 'Ns',),
-        // '/': (context) => NewPage('tony' , 'Steve' , '90'),
+      //  '/': (context) => HomeMain(title: 'Ns',),
+        '/': (context) => NewPage('Road to Watertanki' , '6th SFC' , '2021-2022'),
         // '/': (context) => CustomPaint(),
         // '/': (context) => MyLot(),
         // '/' : (context) => TapToScroll(),
