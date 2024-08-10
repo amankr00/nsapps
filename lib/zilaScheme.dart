@@ -10,9 +10,9 @@ class Ap extends StatelessWidget {
       home: Scaffold(
         backgroundColor: Color(0xff0E4C9F), // Set background to sky blue
         body: ZilaPage(
-          schemeName: "Scheme A",
-          schemeFinHead: "Finance Head A",
-          schemeFinYear: "2024-25",
+          schemeName: "Scheme Name : RoadtoWatertanki",
+          schemeFinHead: "Financial Head : 6th S.F.C",
+          schemeFinYear: "Financial Year : 2024-25",
         ),
       ),
     );
