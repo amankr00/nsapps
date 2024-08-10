@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
+import 'package:nsapps/form.dart';
 
 import 'desktop/phase1.dart';
 import 'zilaScheme.dart';
@@ -27,7 +28,8 @@ class MyApp extends StatelessWidget {
       initialRoute: '/',
       routes: {
       //  '/': (context) => HomeMain(title: 'Ns',),
-        '/': (context) => Ap(),
+        // '/': (context) => Ap(),
+        '/': (context) => Frm(title: 'Stark',)
         // '/': (context) => CustomPaint(),
         // '/': (context) => MyLot(),
         // '/' : (context) => TapToScroll(),

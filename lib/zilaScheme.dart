@@ -136,7 +136,7 @@ class ZilaPage extends StatelessWidget {
             )
           else if (u == 2)
             Positioned.fill(
-              right: MediaQuery.of(context).size.width * 0.85,
+              right: MediaQuery.of(context).size.width * 0.83,
               bottom: 105,
               child: Align(
                 alignment: Alignment.centerLeft,
