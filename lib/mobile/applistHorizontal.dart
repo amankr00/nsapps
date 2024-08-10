@@ -47,7 +47,7 @@ class _HorizontalListViewState extends State<HorizontalListView> {
       controller: _scrollController,
       scrollDirection: Axis.horizontal,
       itemCount: 9,
-      itemBuilder: (context, index) {
+      itemBuilder: (context, index){
         if (index == 0) {
           return Container(
               width: MediaQuery.of(context).size.width * 0.1,

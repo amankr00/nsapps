@@ -488,59 +488,10 @@ class _SubscribeState extends State<Subscribe> {
             onTap: () {
               tap = true;
               h = true;
-
-              // showDialog(
-              //       context: context,
-              //       builder: (BuildContext context) {
-              //         return SnackbarDemo();
-              //       })
-              ;
-              // Container(
-              // width: 300,
-              // color: Colors.purple,);
-
-              // ScaffoldMessenger.of(context).showSnackBar(
-              //   SnackBar(
-              //     content: Text('Hello! This is a snackbar'),
-              //     action: SnackBarAction(
-              //       label: 'Undo',
-              //       onPressed: () {
-              //         // Code to execute when the action is pressed
-              //       },
-              //     ),
-              //   ),
-              // );
-              // _showSnackbar();
-              // Text('gghg');
             },
             child: ElevatedButton(onPressed: (){_showSnackbar();}, child: Text('Subscribe',
             ),
-            )
-            // 
-            // AnimatedContainer(
-            //   duration: Duration(milliseconds: 200),
-            //   width: _isHovering ? 180 * 1.05 : 180,
-            //   height: _isHovering ? 50 * 1.05 : 50,
-            //   decoration: BoxDecoration(
-            //     color: _isHovering
-            //         ? Color.fromARGB(201, 19, 125, 131)
-            //         : Color.fromARGB(255, 23, 186, 186),
-            //     borderRadius: BorderRadius.circular(20),
-            //   ),
-            //   child: Container(
-            //     width: MediaQuery.of(context).size.width * 0.19,
-            //     // height: MediaQuery.of(context).size.width * 0.05,
-            //     alignment: Alignment.center,
-            //     child: Text('SUBSCRIBE',
-            //         style: TextStyle(
-            //             fontSize: 20,
-            //             decoration: TextDecoration.none,
-            //             color: Colors.white,
-            //             letterSpacing: 2)),
-            //   ),
-            // ),
-
-            
+            ) 
           )),
     ]);
   }

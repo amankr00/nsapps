@@ -27,7 +27,7 @@ class MyApp extends StatelessWidget {
       initialRoute: '/',
       routes: {
       //  '/': (context) => HomeMain(title: 'Ns',),
-        '/': (context) => NewPage('Road to Watertanki' , '6th SFC' , '2021-2022'),
+        '/': (context) => Ap(),
         // '/': (context) => CustomPaint(),
         // '/': (context) => MyLot(),
         // '/' : (context) => TapToScroll(),

@@ -56,8 +56,7 @@ class _HomeMainState extends State<HomeMain> {
             top: true,
             child: ScreenTypeLayout.builder(
               mobile: (BuildContext context) => MobileLy(hov = true),
-              desktop: (BuildContext context) =>
-                  completePage(context, "tablet"),
+              desktop: (BuildContext context) => completePage(context, "tablet"),
               tablet: (BuildContext context) => completePage(context, "mobile"),
             )),
       ),
