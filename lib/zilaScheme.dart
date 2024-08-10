@@ -211,16 +211,8 @@ Widget CustomChip(List<String> rowData, int colIndex, BuildContext context , int
                 ],
               ),
               SizedBox(height: 20),
-              Text(
-                rowData[colIndex],
-                style: TextStyle(
-                    fontSize: 20,
-                    color: Colors.white,
-                    fontWeight: FontWeight.bold),
-              ),
-              SizedBox(height: 7),
               GestureDetector(
-              onTap: (
+               onTap: (
               ){
               if(r==1 && colIndex == 1)
                showDialog(
@@ -255,8 +247,6 @@ Widget CustomChip(List<String> rowData, int colIndex, BuildContext context , int
           else if (r == 3 )
             showDialog(
             context: context,
-            // useRootNavigator: false,
-            // Navigator.pop(context, true),
             builder: (BuildContext context) {
               return Container(
                   child: PDFdownloadScheme(context, rowData[colIndex]));
@@ -265,13 +255,33 @@ Widget CustomChip(List<String> rowData, int colIndex, BuildContext context , int
 
           },
               child : Text(
-                'Click Here to Download!',
+                rowData[colIndex],
+                style: TextStyle(
+                    fontSize: 20,
+                    color: Colors.white,
+                    fontWeight: FontWeight.bold),
+              )),
+              SizedBox(height: 7),
+              Row(
+              mainAxisAlignment: MainAxisAlignment.center,
+             children: [
+             Text(
+                'Comment ,',
                 style: TextStyle(
                   fontSize: 16,
                   color: Colors.white,
                 ),
-              )
               ),
+              SizedBox(width: 10,),
+             Text(
+                'Date/Time',
+                style: TextStyle(
+                  fontSize: 16,
+                  color: Colors.white,
+                ),
+              ),
+              
+              ]),
               SizedBox(height: 20),
             ],
           ),
@@ -402,7 +412,14 @@ Center PDFdownloadNOC(BuildContext context, t1) {
                     // Container(),
                   ],
                 ),
+                SizedBox(height: 50,),
+                Text('Comment...',
+                style: TextStyle(fontFamily: 'Roboto' , fontWeight: FontWeight.bold , fontSize: 24),),
+                SizedBox(height: 30,),
+                Text('Date / Time...',
+                style: TextStyle(fontFamily: 'Roboto' , fontWeight: FontWeight.bold , fontSize: 24),)
               ],
+
             ),
           ],
         )),
@@ -501,6 +518,12 @@ Center PDFdownloadScheme(BuildContext context, t1) {
                     smallChip(download_for_offline, 'PDF', context),
                   ],
                 ),
+                SizedBox(height: 50,),
+                Text('Comment...',
+                style: TextStyle(fontFamily: 'Roboto' , fontWeight: FontWeight.bold , fontSize: 24),),
+                SizedBox(height: 30,),
+                Text('Date / Time...',
+                style: TextStyle(fontFamily: 'Roboto' , fontWeight: FontWeight.bold , fontSize: 24),)
               ],
             ),
           ],

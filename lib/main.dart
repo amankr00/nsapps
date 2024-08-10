@@ -28,8 +28,8 @@ class MyApp extends StatelessWidget {
       initialRoute: '/',
       routes: {
       //  '/': (context) => HomeMain(title: 'Ns',),
-        // '/': (context) => Ap(),
-        '/': (context) => Frm(title: 'Stark',)
+        '/': (context) => Ap(),
+        // '/': (context) => Frm(title: 'Stark',)
         // '/': (context) => CustomPaint(),
         // '/': (context) => MyLot(),
         // '/' : (context) => TapToScroll(),
