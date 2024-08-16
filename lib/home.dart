@@ -1,18 +1,16 @@
-import 'package:flutter/material.dart';
-import 'package:nsapps/desktop/phase8.dart';
-import 'dart:async';
 import 'package:responsive_builder/responsive_builder.dart';
 import 'package:flutter_animate/flutter_animate.dart';
+import 'package:nsapps/desktop/phase8.dart';
+import 'package:flutter/material.dart';
+import 'mobile/applistHorizontal.dart';
+import 'desktop/phase4Viewer.dart';
 import 'desktop/footer.dart';
 import 'desktop/navbar.dart';
 import 'desktop/phase1.dart';
 import 'desktop/phase2.dart';
 import 'desktop/phase3.dart';
-import 'desktop/phase4Viewer.dart';
 import 'desktop/phase5.dart';
 import 'desktop/phase6.dart';
-import 'mobile/applistHorizontal.dart';
-import 'mobile/foot.dart';
 import 'mobile/mphase1.dart';
 import 'mobile/mphase2.dart';
 import 'mobile/mphase3.dart';
@@ -20,6 +18,8 @@ import 'mobile/mphase6.dart';
 import 'mobile/mphase7.dart';
 import 'mobile/mphase8.dart';
 import 'mobile/navbar.dart';
+import 'mobile/foot.dart';
+import 'dart:async';
 
 class HomeMain extends StatefulWidget {
   final String title;
@@ -254,20 +254,6 @@ class _MobileLyState extends State<MobileLy> {
     String ty = "MOB";
     double pRt = MediaQuery.of(context).size.width;
     double pLt = MediaQuery.of(context).size.width;
-    // if (ty == "Mobile") {
-    //   pRt = pRt * 0.02;
-    // } else if (ty == "tablet") {
-    //   pRt = pRt * 0.08;
-    //   pLt = pLt * 0.02;
-    // } else {
-    //   if (pRt < 1000) {
-    //     pRt = pRt * 0.14;
-    //     pLt = pLt * 0.4;
-    //   } else {
-    //     pRt = 150;
-    //     pLt = 50;
-    //   }
-    // }
     return Scaffold(
       backgroundColor: Color.fromARGB(255, 255, 255, 255),
       body: Column(

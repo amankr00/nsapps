@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:responsive_builder/responsive_builder.dart';
 import 'dart:math';
 
 import 'package:url_launcher/url_launcher.dart';
@@ -6,6 +7,26 @@ import 'package:url_launcher/url_launcher.dart';
 class Ap extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
+    return SafeArea(
+        child: ScreenTypeLayout.builder(
+      mobile: (BuildContext context) => MobileLy(),
+      desktop: (BuildContext context) => desktopLay(),
+      // tablet: (BuildContext context) => completePage(context, "mobile"),
+    ));
+  }
+
+  MaterialApp MobileLy() {
+    return MaterialApp(
+      home: Scaffold(
+          backgroundColor: Color(0xff0E4C9F),
+          body: MZilaPage(
+              schemeName: 'Scheme Name : RoadtoWatertanki',
+              schemeFinHead: 'Financial Head : 6th S.F.C',
+              schemeFinYear: 'Financial Year : 2024-25')),
+    );
+  }
+
+  MaterialApp desktopLay() {
     return MaterialApp(
       home: Scaffold(
         backgroundColor: Color(0xff0E4C9F), // Set background to sky blue
@@ -15,6 +36,309 @@ class Ap extends StatelessWidget {
           schemeFinYear: "Financial Year : 2024-25",
         ),
       ),
+    );
+  }
+}
+
+class MZilaPage extends StatelessWidget {
+  final String schemeName;
+  final String schemeFinHead;
+  final String schemeFinYear;
+
+  MZilaPage({
+    required this.schemeName,
+    required this.schemeFinHead,
+    required this.schemeFinYear,
+  });
+
+  final List<String> rowData1 = [
+    "Scheme Details",
+    "NOC Letters",
+  ];
+  final List<String> rowData2 = [
+    "DDC Approval",
+    "ACO Approval",
+  ];
+  final List<String> rowData3 = [
+    "Ex Engg Work Order",
+    "TA Monitoring",
+  ];
+  final List<String> rowData4 = [
+    "Ex Engg MB, Bills",
+    "MB Approved by TA",
+  ];
+  final List<String> rowData5 = [
+    "Inspection By Ex Engg",
+    "Accountant File Put Up",
+  ];
+  final List<String> rowData6 = [
+    "Scheme Completed",
+    "DDC Final Approval",
+  ];
+
+  @override
+  Widget build(BuildContext context) {
+    return SingleChildScrollView(
+      child: Padding(
+        padding: const EdgeInsets.all(8.0),
+        child: Column(
+          crossAxisAlignment: CrossAxisAlignment.center,
+          children: [
+            Text(
+              'Zila Parishad Nalanda',
+              style: TextStyle(
+                  fontSize: 36,
+                  fontWeight: FontWeight.bold,
+                  color: Colors.white),
+            ),
+            SizedBox(height: 20),
+            Container(
+              width: MediaQuery.of(context).size.width * 0.9,
+              decoration: BoxDecoration(
+                color: Colors.pink[100],
+                borderRadius: BorderRadius.circular(20),
+              ),
+              padding: const EdgeInsets.all(8.0),
+              margin: const EdgeInsets.symmetric(vertical: 8.0),
+              child: Column(
+                children: [
+                  Text(
+                    schemeName,
+                    style: TextStyle(fontSize: 18, fontWeight: FontWeight.bold),
+                  ),
+                  Text(
+                    schemeFinHead,
+                    style: TextStyle(fontSize: 18, fontWeight: FontWeight.bold),
+                  ),
+                  Text(
+                    schemeFinYear,
+                    style: TextStyle(fontSize: 18, fontWeight: FontWeight.bold),
+                  ),
+                ],
+              ),
+            ),
+            SizedBox(height: 40),
+            Column(
+              children: [
+                buildRow(context, rowData1, 1),
+                buildRow(context, rowData2, 2),
+                buildRow(context, rowData3, 3),
+                buildRow(context, rowData4, 4),
+                buildRow(context, rowData5, 5),
+                buildRow(context, rowData6, 6),
+              ],
+            ),
+            SizedBox(
+              height: 90,
+            ),
+          ],
+        ),
+      ),
+    );
+  }
+
+  Widget buildRow(BuildContext context, List<String> rowData, int u) {
+    return Container(
+      margin: EdgeInsets.all(5),
+      padding: EdgeInsets.all(10),
+      child: Stack(
+        children: [
+          Positioned.fill(
+            left: MediaQuery.of(context).size.width * 0.274,
+            bottom: 70,
+            child: Align(
+              alignment: Alignment.centerLeft,
+              child: CustomPaint(
+                painter: LinePainter(),
+                size: Size(MediaQuery.of(context).size.width * 0.36, 0),
+              ),
+            ),
+          ),
+          if (u == 1)
+            Positioned.fill(
+              right: MediaQuery.of(context).size.width * 0.06,
+              bottom: 70,
+              child: Align(
+                alignment: Alignment.centerRight,
+                child: CustomPaint(
+                  painter: MPaint(),
+                  size: Size(MediaQuery.of(context).size.width * 0.32,
+                      MediaQuery.of(context).size.height * 0.001),
+                ),
+              ),
+            )
+          else if (u == 2)
+            Positioned.fill(
+              right: MediaQuery.of(context).size.width * 0.681,
+              bottom: 65,
+              child: Align(
+                alignment: Alignment.centerLeft,
+                child: CustomPaint(
+                  painter: MPaint2(),
+                  size: Size(MediaQuery.of(context).size.width * 0.82, 0),
+                ),
+              ),
+            )
+          else if (u == 3)
+            Positioned.fill(
+              right: MediaQuery.of(context).size.width * 0.06,
+              bottom: 70,
+              child: Align(
+                alignment: Alignment.centerRight,
+                child: CustomPaint(
+                  painter: MPaint(),
+                  size: Size(MediaQuery.of(context).size.width * 0.32,
+                      MediaQuery.of(context).size.height * 0.001),
+                ),
+              ),
+            )
+          else if (u == 4)
+            Positioned.fill(
+              right: MediaQuery.of(context).size.width * 0.681,
+              bottom: 65,
+              child: Align(
+                alignment: Alignment.centerLeft,
+                child: CustomPaint(
+                  painter: MPaint2(),
+                  size: Size(MediaQuery.of(context).size.width * 0.82, 0),
+                ),
+              ),
+            )
+          else if (u == 5)
+            Positioned.fill(
+              right: MediaQuery.of(context).size.width * 0.06,
+              bottom: 70,
+              child: Align(
+                alignment: Alignment.centerRight,
+                child: CustomPaint(
+                  painter: MPaint(),
+                  size: Size(MediaQuery.of(context).size.width * 0.32,
+                      MediaQuery.of(context).size.height * 0.001),
+                ),
+              ),
+            ),
+          Container(
+            padding: EdgeInsets.all(10),
+            decoration: BoxDecoration(
+              borderRadius: BorderRadius.circular(50),
+              color: Colors.transparent,
+            ),
+            child: Row(
+              mainAxisAlignment: MainAxisAlignment.spaceAround,
+              children: List.generate(2, (colIndex) {
+                return Container(
+                  margin: const EdgeInsets.all(4.0),
+                  child: CustomChip(rowData, colIndex, context, u),
+                );
+              }),
+            ),
+          ),
+        ],
+      ),
+    );
+  }
+
+  Widget CustomChip(
+      List<String> rowData, int colIndex, BuildContext context, int r) {
+    return StatefulBuilder(
+      builder: (context, setState) {
+        late bool isHovered = false;
+
+        return MouseRegion(
+          onEnter: (_) => setState(() => isHovered = true),
+          onExit: (_) => setState(() => isHovered = false),
+          child: Container(
+            alignment: Alignment.center,
+            width: MediaQuery.of(context).size.width * 0.4,
+            decoration: BoxDecoration(
+              borderRadius: BorderRadius.circular(12),
+            ),
+            child: Column(
+              crossAxisAlignment: CrossAxisAlignment.center,
+              children: [
+                Stack(
+                  children: [
+                    Container(
+                      width: 30,
+                      height: 30,
+                      decoration: BoxDecoration(
+                        color: Color(0xff0E4C9F),
+                        shape: BoxShape.circle,
+                      ),
+                    ),
+                    Icon(
+                      Icons.panorama_fish_eye,
+                      size: 30,
+                      color: Colors.blue, // Circle color
+                    ),
+                  ],
+                ),
+                SizedBox(height: 15),
+                GestureDetector(
+                  onTap: () {
+                    if (r == 1 && colIndex == 1)
+                      showDialog(
+                        context: context,
+                        builder: (BuildContext context) {
+                          return Container(
+                              child:
+                                  MPDFdownloadNOC(context, rowData[colIndex]));
+                        },
+                      );
+                    if (r == 1 && colIndex != 1)
+                      showDialog(
+                        context: context,
+                        builder: (BuildContext context) {
+                          return Container(
+                              child: PDFdownloadScheme(
+                                  context, rowData[colIndex]));
+                        },
+                      );
+                    else if (r != 1)
+                      showDialog(
+                        context: context,
+                        builder: (BuildContext context) {
+                          return Container(
+                              child: PDFdownloadScheme(
+                                  context, rowData[colIndex]));
+                        },
+                      );
+                  },
+                  child: Text(
+                    rowData[colIndex],
+                    style: TextStyle(
+                        fontSize: 16,
+                        color: Colors.white,
+                        fontWeight: FontWeight.bold),
+                  ),
+                ),
+                SizedBox(height: 5),
+                Row(
+                  mainAxisAlignment: MainAxisAlignment.center,
+                  children: [
+                    Text(
+                      'Comment ,',
+                      style: TextStyle(
+                        fontSize: 14,
+                        color: Colors.white,
+                      ),
+                    ),
+                    SizedBox(width: 5),
+                    Text(
+                      'Date/Time',
+                      style: TextStyle(
+                        fontSize: 14,
+                        color: Colors.white,
+                      ),
+                    ),
+                  ],
+                ),
+                SizedBox(height: 10),
+              ],
+            ),
+          ),
+        );
+      },
     );
   }
 }
@@ -157,7 +481,7 @@ class ZilaPage extends StatelessWidget {
               children: List.generate(4, (colIndex) {
                 return Container(
                   margin: const EdgeInsets.all(4.0),
-                  child: CustomChip(rowData, colIndex, context , u),
+                  child: CustomChip(rowData, colIndex, context, u),
                 );
               }),
             ),
@@ -166,130 +490,133 @@ class ZilaPage extends StatelessWidget {
       ),
     );
   }
-Widget CustomChip(List<String> rowData, int colIndex, BuildContext context , int r) {
-  return StatefulBuilder(
-    builder: (context, setState) {
-      late bool isHovered = false;
-      
-      return MouseRegion(
-        onEnter: (_) => setState(() => isHovered = true),
-        onExit: (_) => setState(() => isHovered = false),
-        child: Container(
-          alignment: Alignment.center,
-          width: MediaQuery.of(context).size.width * 0.2,
-          decoration: BoxDecoration(
-            // color: isHovered ? Color.fromARGB(255, 3, 166, 98) : Colors.deepPurpleAccent[100],
-          
-            // boxShadow: [
-            //   BoxShadow(
-            //     // color:  isHovered ? Color.fromARGB(255, 26, 159, 62) : Colors.white.withOpacity(0.2),
-            //     blurRadius: 4,
-            //     spreadRadius: 2,
-            //     offset: Offset(0, 2),
-            //   ),
-            // ],
-            borderRadius: BorderRadius.circular(12),
-          ),
-          child: Column(
-            crossAxisAlignment: CrossAxisAlignment.center,
-            children: [
-              Stack(
-                children: [
-                  Container(
-                    width: 40,
-                    height: 40,
-                    decoration: BoxDecoration(
-                      color: Color(0xff0E4C9F),
-                      shape: BoxShape.circle,
+
+  Widget CustomChip(
+      List<String> rowData, int colIndex, BuildContext context, int r) {
+    return StatefulBuilder(
+      builder: (context, setState) {
+        late bool isHovered = false;
+
+        return MouseRegion(
+          onEnter: (_) => setState(() => isHovered = true),
+          onExit: (_) => setState(() => isHovered = false),
+          child: Container(
+            alignment: Alignment.center,
+            width: MediaQuery.of(context).size.width * 0.2,
+            decoration: BoxDecoration(
+              // color: isHovered ? Color.fromARGB(255, 3, 166, 98) : Colors.deepPurpleAccent[100],
+
+              // boxShadow: [
+              //   BoxShadow(
+              //     // color:  isHovered ? Color.fromARGB(255, 26, 159, 62) : Colors.white.withOpacity(0.2),
+              //     blurRadius: 4,
+              //     spreadRadius: 2,
+              //     offset: Offset(0, 2),
+              //   ),
+              // ],
+              borderRadius: BorderRadius.circular(12),
+            ),
+            child: Column(
+              crossAxisAlignment: CrossAxisAlignment.center,
+              children: [
+                Stack(
+                  children: [
+                    Container(
+                      width: 40,
+                      height: 40,
+                      decoration: BoxDecoration(
+                        color: Color(0xff0E4C9F),
+                        shape: BoxShape.circle,
+                      ),
+                    ),
+                    Icon(
+                      Icons.panorama_fish_eye,
+                      size: 40,
+                      color: Colors.blue, // Circle color
+                    ),
+                  ],
+                ),
+                SizedBox(height: 20),
+                GestureDetector(
+                    onTap: () {
+                      if (r == 1 && colIndex == 1)
+                        showDialog(
+                          context: context,
+                          // useRootNavigator: false,
+                          // Navigator.pop(context, true),
+                          builder: (BuildContext context) {
+                            return Container(
+                                child:
+                                    PDFdownloadNOC(context, rowData[colIndex]));
+                          },
+                        );
+                      if (r == 1 && colIndex != 1)
+                        showDialog(
+                          context: context,
+                          // useRootNavigator: false,
+                          // Navigator.pop(context, true),
+                          builder: (BuildContext context) {
+                            return Container(
+                                child: PDFdownloadScheme(
+                                    context, rowData[colIndex]));
+                          },
+                        );
+                      else if (r == 2)
+                        showDialog(
+                          context: context,
+                          // useRootNavigator: false,
+                          // Navigator.pop(context, true),
+                          builder: (BuildContext context) {
+                            return Container(
+                                child: PDFdownloadScheme(
+                                    context, rowData[colIndex]));
+                          },
+                        );
+                      else if (r == 3)
+                        showDialog(
+                          context: context,
+                          builder: (BuildContext context) {
+                            return Container(
+                                child: PDFdownloadScheme(
+                                    context, rowData[colIndex]));
+                          },
+                        );
+                    },
+                    child: Text(
+                      rowData[colIndex],
+                      style: TextStyle(
+                          fontSize: 20,
+                          color: Colors.white,
+                          fontWeight: FontWeight.bold),
+                    )),
+                SizedBox(height: 7),
+                Row(mainAxisAlignment: MainAxisAlignment.center, children: [
+                  Text(
+                    'Comment ,',
+                    style: TextStyle(
+                      fontSize: 16,
+                      color: Colors.white,
                     ),
                   ),
-                  Icon(
-                    Icons.panorama_fish_eye,
-                    size: 40,
-                    color: Colors.blue, // Circle color
+                  SizedBox(
+                    width: 10,
                   ),
-                ],
-              ),
-              SizedBox(height: 20),
-              GestureDetector(
-               onTap: (
-              ){
-              if(r==1 && colIndex == 1)
-               showDialog(
-            context: context,
-            // useRootNavigator: false,
-            // Navigator.pop(context, true),
-            builder: (BuildContext context) {
-              return Container(
-                  child: PDFdownloadNOC(context, rowData[colIndex]));
-            },
-          );
-              if(r==1 && colIndex != 1)
-               showDialog(
-            context: context,
-            // useRootNavigator: false,
-            // Navigator.pop(context, true),
-            builder: (BuildContext context) {
-              return Container(
-                  child: PDFdownloadScheme(context, rowData[colIndex]));
-            },
-          );
-          else if(r == 2 )
-            showDialog(
-            context: context,
-            // useRootNavigator: false,
-            // Navigator.pop(context, true),
-            builder: (BuildContext context) {
-              return Container(
-                  child: PDFdownloadScheme(context, rowData[colIndex]));
-            },
-          );
-          else if (r == 3 )
-            showDialog(
-            context: context,
-            builder: (BuildContext context) {
-              return Container(
-                  child: PDFdownloadScheme(context, rowData[colIndex]));
-            },
-          );
-
-          },
-              child : Text(
-                rowData[colIndex],
-                style: TextStyle(
-                    fontSize: 20,
-                    color: Colors.white,
-                    fontWeight: FontWeight.bold),
-              )),
-              SizedBox(height: 7),
-              Row(
-              mainAxisAlignment: MainAxisAlignment.center,
-             children: [
-             Text(
-                'Comment ,',
-                style: TextStyle(
-                  fontSize: 16,
-                  color: Colors.white,
-                ),
-              ),
-              SizedBox(width: 10,),
-             Text(
-                'Date/Time',
-                style: TextStyle(
-                  fontSize: 16,
-                  color: Colors.white,
-                ),
-              ),
-              
-              ]),
-              SizedBox(height: 20),
-            ],
+                  Text(
+                    'Date/Time',
+                    style: TextStyle(
+                      fontSize: 16,
+                      color: Colors.white,
+                    ),
+                  ),
+                ]),
+                SizedBox(height: 20),
+              ],
+            ),
           ),
-        ),
-      );
-    },
-  );
-}
+        );
+      },
+    );
+  }
 }
 
 class LinePainter extends CustomPainter {
@@ -322,7 +649,29 @@ class SemiCirclePainter extends CustomPainter {
     double centerX = size.width * 0.87;
     double centerY = radius;
 
-    Rect rect = Rect.fromCircle(center: Offset(centerX, centerY), radius: radius);
+    Rect rect =
+        Rect.fromCircle(center: Offset(centerX, centerY), radius: radius);
+    canvas.drawArc(rect, -pi / 2, pi, false, paint);
+  }
+
+  @override
+  bool shouldRepaint(CustomPainter oldDelegate) => false;
+}
+
+class MPaint extends CustomPainter {
+  @override
+  void paint(Canvas canvas, Size size) {
+    final paint = Paint()
+      ..color = Color.fromARGB(255, 255, 255, 255)
+      ..strokeWidth = 3
+      ..style = PaintingStyle.stroke;
+
+    double radius = 80; // Adjust as needed
+    double centerX = size.width * 0.57;
+    double centerY = radius;
+
+    Rect rect =
+        Rect.fromCircle(center: Offset(centerX, centerY), radius: radius);
     canvas.drawArc(rect, -pi / 2, pi, false, paint);
   }
 
@@ -342,7 +691,8 @@ class SemiCirclePainter2 extends CustomPainter {
     double centerX = size.width * 0.87;
     double centerY = radius;
 
-    Rect rect = Rect.fromCircle(center: Offset(centerX, centerY), radius: radius);
+    Rect rect =
+        Rect.fromCircle(center: Offset(centerX, centerY), radius: radius);
     canvas.drawArc(rect, pi / 2, pi, false, paint);
   }
 
@@ -350,7 +700,26 @@ class SemiCirclePainter2 extends CustomPainter {
   bool shouldRepaint(CustomPainter oldDelegate) => false;
 }
 
+class MPaint2 extends CustomPainter {
+  @override
+  void paint(Canvas canvas, Size size) {
+    final paint = Paint()
+      ..color = Colors.white
+      ..strokeWidth = 3
+      ..style = PaintingStyle.stroke;
 
+    double radius = 80; // Adjust as needed
+    double centerX = size.width * 0.87;
+    double centerY = radius;
+
+    Rect rect =
+        Rect.fromCircle(center: Offset(centerX, centerY), radius: radius);
+    canvas.drawArc(rect, pi / 2, pi, false, paint);
+  }
+
+  @override
+  bool shouldRepaint(CustomPainter oldDelegate) => false;
+}
 
 Center PDFdownloadNOC(BuildContext context, t1) {
   const IconData download_for_offline = IconData(
@@ -412,15 +781,148 @@ Center PDFdownloadNOC(BuildContext context, t1) {
                     // Container(),
                   ],
                 ),
-                SizedBox(height: 50,),
-                Text('Comment...',
-                style: TextStyle(fontFamily: 'Roboto' , fontWeight: FontWeight.bold , fontSize: 24),),
-                SizedBox(height: 30,),
-                Text('Date / Time...',
-                style: TextStyle(fontFamily: 'Roboto' , fontWeight: FontWeight.bold , fontSize: 24),)
+                SizedBox(
+                  height: 50,
+                ),
+                Text(
+                  'Comment...',
+                  style: TextStyle(
+                      fontFamily: 'Roboto',
+                      fontWeight: FontWeight.bold,
+                      fontSize: 24),
+                ),
+                SizedBox(
+                  height: 30,
+                ),
+                Text(
+                  'Date / Time...',
+                  style: TextStyle(
+                      fontFamily: 'Roboto',
+                      fontWeight: FontWeight.bold,
+                      fontSize: 24),
+                )
               ],
-
             ),
+          ],
+        )),
+  );
+}
+
+Center MPDFdownloadNOC(BuildContext context, t1) {
+  const IconData download_for_offline = IconData(
+    0xe203,
+    fontFamily: 'MaterialIcons',
+  );
+  return Center(
+    child: Container(
+        height: MediaQuery.of(context).size.height * 0.65,
+        width: MediaQuery.of(context).size.width * 0.65,
+        color: Colors.white,
+        alignment: Alignment.center,
+        child: Stack(
+          children: [
+            Positioned(
+                child: Container(
+                    height: 70,
+                    width: MediaQuery.of(context).size.width * 0.7,
+                    color: Color.fromARGB(98, 139, 166, 255))),
+            Padding(
+              padding: EdgeInsets.only(left: 0),
+              child: Column(
+                children: [
+                  SizedBox(
+                    height: 10,
+                  ),
+                  Text(
+                    t1,
+                    style: TextStyle(
+                        color: Color.fromARGB(255, 0, 0, 0),
+                        fontSize: 30,
+                        fontWeight: FontWeight.bold,
+                        decoration: TextDecoration.none),
+                  ),
+                  SizedBox(
+                    height: 10,
+                  ),
+                  Column(
+                    mainAxisAlignment: MainAxisAlignment.center,
+                    crossAxisAlignment: CrossAxisAlignment.start,
+                    children: [
+                      Row(
+                        mainAxisAlignment: MainAxisAlignment.center,
+                        crossAxisAlignment: CrossAxisAlignment.start,
+                        children: [
+                          Transform.scale(
+                              scale: 0.5,
+                              child: smallChip(
+                                  download_for_offline, 'BDO', context)),
+                          // SizedBox(
+                          //   width: 20,
+                          // ),
+                          Transform.scale(
+                              scale: 0.5,
+                              child: smallChip(
+                                  download_for_offline, 'CO', context)),
+                          
+                        ],
+                      ),
+                     Row(
+                        mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                        children: [
+                          Transform.scale(
+                              scale: 0.5,
+                              child: smallChip(
+                                  download_for_offline, 'PO', context)),
+                          
+                          Transform.scale(
+                              scale: 0.5,
+                              child: smallChip(download_for_offline,
+                                  'Ex Enggineer', context)),
+                       
+                          
+                        ],
+                      ),
+                      Row(
+                      mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                      children: [
+                         Transform.scale(
+                              scale: 0.5,
+                              child: smallChip(download_for_offline,
+                                  'TA', context)),
+                       Container(
+                       width: MediaQuery.of(context).size.width * 0.25,
+                        child : Column(children: [
+                        
+                                   Text(
+                    'Comment...',
+                    style: TextStyle(
+                        fontFamily: 'Roboto',
+                        fontWeight: FontWeight.bold,
+                        fontSize: 20),
+                  ),
+                  SizedBox(
+                    height: 10,
+                  ),
+                  Text(
+                    'Date / Time...',
+                    style: TextStyle(
+                        fontFamily: 'Roboto',
+                        fontWeight: FontWeight.bold,
+                        fontSize: 20),
+                  )
+                  ]
+                  ),)
+                                  ])
+
+                    ],
+                  ),
+                  SizedBox(
+                    height: 10,
+                  ),
+                 
+                ],
+              ),
+            )
           ],
         )),
   );
@@ -518,12 +1020,26 @@ Center PDFdownloadScheme(BuildContext context, t1) {
                     smallChip(download_for_offline, 'PDF', context),
                   ],
                 ),
-                SizedBox(height: 50,),
-                Text('Comment...',
-                style: TextStyle(fontFamily: 'Roboto' , fontWeight: FontWeight.bold , fontSize: 24),),
-                SizedBox(height: 30,),
-                Text('Date / Time...',
-                style: TextStyle(fontFamily: 'Roboto' , fontWeight: FontWeight.bold , fontSize: 24),)
+                SizedBox(
+                  height: 50,
+                ),
+                Text(
+                  'Comment...',
+                  style: TextStyle(
+                      fontFamily: 'Roboto',
+                      fontWeight: FontWeight.bold,
+                      fontSize: 24),
+                ),
+                SizedBox(
+                  height: 30,
+                ),
+                Text(
+                  'Date / Time...',
+                  style: TextStyle(
+                      fontFamily: 'Roboto',
+                      fontWeight: FontWeight.bold,
+                      fontSize: 24),
+                )
               ],
             ),
           ],
