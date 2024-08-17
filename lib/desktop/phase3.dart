@@ -29,7 +29,7 @@ class phase3 extends StatelessWidget {
                   // TextSpan(  
                   // ),
                   TextSpan(
-                    text: 'Project Scoping.',
+                    text: 'Project Scopin.',
                     style: TextStyle(
                       color: Color(0xffFBD90C),
                       fontSize: 45,
